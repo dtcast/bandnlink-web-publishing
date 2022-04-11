@@ -67,7 +67,7 @@
     border: 1px solid $color-danger;
 
     &:hover {
-      background-color: $color-danger-light;
+      background-color: $color-danger-dark !important;
     }
   }
 
@@ -233,9 +233,20 @@
     color: $color-text-regular;
     font-size: 15px;
     border-radius: 8px;
+    transition: all 0.2s ease-in-out;
 
     &::placeholder {
       color: $color-text-placeholder;
+    }
+
+    &:focus {
+      // border: 1px solid $color-text-secondary;
+      border: 1px solid $color-primary;
+    }
+
+    &.error {
+      border: 1px solid $color-danger !important;
+      z-index: 9;
     }
   }
 
@@ -276,9 +287,9 @@
 }
 
 .hover-table {
-	border-top: 1px solid $color-border-heavy;
+  border-top: 1px solid $color-border-heavy;
 
-	tbody > tr {
+  tbody > tr {
     transition: all 0.2s ease-out;
 
     &.active,
@@ -299,7 +310,6 @@
     }
   }
 }
-
 
 .popup-wrap {
   position: fixed;

@@ -22,9 +22,9 @@
       text-align: center;
     }
 
-		.input {
-			border-radius: 0;
-		}
+    .input {
+      border-radius: 0;
+    }
 
     .check-area {
       width: 100%;
@@ -43,7 +43,7 @@
 
       .find-pw {
         border-bottom: 1px solid $color-text-secondary;
-				color: $color-text-secondary;
+        color: $color-text-secondary;
       }
     }
 
@@ -52,6 +52,24 @@
 
       .input {
         flex-grow: 1;
+      }
+
+      .input-wrap {
+        position: relative;
+        flex-grow: 1;
+        width: 100%;
+
+        .time {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          width: auto;
+          z-index: 9;
+          transform: translateY(-50%);
+          color: $color-danger;
+          font-size: 13px;
+          font-weight: 500;
+        }
       }
 
       .btn {

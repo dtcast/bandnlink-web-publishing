@@ -113,6 +113,29 @@
           flex-grow: 1;
 }
 
+.login-page .login-box .phone-auth-area .input-wrap,
+.login-page .signup-box .phone-auth-area .input-wrap {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+}
+
+.login-page .login-box .phone-auth-area .input-wrap .time,
+.login-page .signup-box .phone-auth-area .input-wrap .time {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: auto;
+  z-index: 9;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #f56c6c;
+  font-size: 13px;
+  font-weight: 500;
+}
+
 .login-page .login-box .phone-auth-area .btn,
 .login-page .signup-box .phone-auth-area .btn {
   margin-left: 5px;

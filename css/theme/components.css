@@ -103,7 +103,7 @@
 }
 
 .btn.btn-danger:hover {
-  background-color: #fcdadb;
+  background-color: #d55c5c !important;
 }
 
 .btn.btn-info {
@@ -280,6 +280,8 @@
   color: #4c5864;
   font-size: 15px;
   border-radius: 8px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .form .input::-webkit-input-placeholder {
@@ -296,6 +298,15 @@
 
 .form .input::placeholder {
   color: #c0c4cc;
+}
+
+.form .input:focus {
+  border: 1px solid #3182f6;
+}
+
+.form .input.error {
+  border: 1px solid #f56c6c !important;
+  z-index: 9;
 }
 
 .form input[type="checkbox"],
