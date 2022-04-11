@@ -1,0 +1,149 @@
+.color-primary {
+  color: #3182f6 !important;
+}
+
+.color-success {
+  color: #67c23a !important;
+}
+
+.color-warning {
+  color: #e6a23c !important;
+}
+
+.color-danger {
+  color: #f56c6c !important;
+}
+
+.color-info {
+  color: #8b95a1 !important;
+}
+
+.bg-flat-white {
+  background-color: #f5f7fa;
+}
+
+.border-top {
+  border-top: 1px solid #e9eaec;
+}
+
+.border-top-black {
+  border-top: 1px solid #1f2e3d;
+}
+
+.login-page {
+  background-color: #f5f7fa;
+}
+
+.login-page .login-box,
+.login-page .signup-box {
+  background-color: white;
+  padding: 20px;
+  margin: 0 auto;
+  width: 96%;
+  max-width: 350px;
+  font-size: 13px;
+  color: #8b95a1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.login-page .login-box h2,
+.login-page .signup-box h2 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #1f2e3d;
+  text-align: center;
+}
+
+.login-page .login-box .input,
+.login-page .signup-box .input {
+  border-radius: 0;
+}
+
+.login-page .login-box .check-area,
+.login-page .signup-box .check-area {
+  width: 100%;
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-page .login-box .check-area label,
+.login-page .signup-box .check-area label {
+  margin-left: 5px;
+}
+
+.login-page .login-box .check-area .space,
+.login-page .signup-box .check-area .space {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.login-page .login-box .check-area .find-pw,
+.login-page .signup-box .check-area .find-pw {
+  border-bottom: 1px solid #8b95a1;
+  color: #8b95a1;
+}
+
+.login-page .login-box .phone-auth-area,
+.login-page .signup-box .phone-auth-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-page .login-box .phone-auth-area .input,
+.login-page .signup-box .phone-auth-area .input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.login-page .login-box .phone-auth-area .btn,
+.login-page .signup-box .phone-auth-area .btn {
+  margin-left: 5px;
+}
+
+.login-page .login-box .checkbox-area,
+.login-page .signup-box .checkbox-area {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1;
+  width: 100%;
+}
+
+.login-page .login-box .checkbox-area label,
+.login-page .signup-box .checkbox-area label {
+  margin-left: 5px;
+}
+
+.login-page .login-box .checkbox-area .link-show,
+.login-page .signup-box .checkbox-area .link-show {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+/*# sourceMappingURL=login.css.map */

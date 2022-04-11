@@ -1,0 +1,65 @@
+// Brand Color
+$color-primary: #3182f6;
+$color-primary-light: #409eff;
+
+// Functional Color
+$color-success: #67c23a;
+$color-warning: #e6a23c;
+$color-danger: #f56c6c;
+$color-info: #8b95a1;
+
+$color-success-light: #daf1cf;
+$color-warning-light: #f8e8cf;
+$color-danger-light: #fcdadb;
+$color-info-light: #e3e3e6;
+
+$color-success-dark: #57b22a;
+$color-warning-dark: #d6922c;
+$color-danger-dark: #d55c5c;
+$color-info-dark: #7b8591;
+
+// Text Color
+$color-text-primary: #1f2e3d;
+$color-text-regular: #4c5864;
+$color-text-secondary: #8b95a1;
+$color-text-placeholder: #c0c4cc;
+
+// Border Color
+$color-border: #e9eaec;
+$color-border-heavy: #1f2e3d;
+
+// Color
+$color-flat-white: #f5f7fa;
+$color-flat-black: #191f28;
+
+.color-primary {
+  color: $color-primary !important;
+}
+
+.color-success {
+  color: $color-success !important;
+}
+
+.color-warning {
+  color: $color-warning !important;
+}
+
+.color-danger {
+  color: $color-danger !important;
+}
+
+.color-info {
+  color: $color-info !important;
+}
+
+.bg-flat-white {
+  background-color: $color-flat-white;
+}
+
+.border-top {
+	border-top: 1px solid $color-border;
+}
+
+.border-top-black {
+	border-top: 1px solid $color-border-heavy;
+}

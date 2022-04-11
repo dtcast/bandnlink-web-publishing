@@ -1,0 +1,32 @@
+.color-primary {
+  color: #3182f6 !important;
+}
+
+.color-success {
+  color: #67c23a !important;
+}
+
+.color-warning {
+  color: #e6a23c !important;
+}
+
+.color-danger {
+  color: #f56c6c !important;
+}
+
+.color-info {
+  color: #8b95a1 !important;
+}
+
+.bg-flat-white {
+  background-color: #f5f7fa;
+}
+
+.border-top {
+  border-top: 1px solid #e9eaec;
+}
+
+.border-top-black {
+  border-top: 1px solid #1f2e3d;
+}
+/*# sourceMappingURL=color.css.map */

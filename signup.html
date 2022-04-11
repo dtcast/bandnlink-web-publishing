@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Band&Cast</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- import CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  </head>
+  <body>
+    <header class="border">
+      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+      <ul class="menus">
+        <li>
+          <a href="./campaign.html">캠페인</a>
+        </li>
+        <li>
+          <a href="./insight.html">#인사이트</a>
+        </li>
+        <li>
+          <a href="./cs_notice_list.html">고객센터</a>
+        </li>
+        <li>
+          <a href="./login.html">로그인</a>
+        </li>
+      </ul>
+    </header>
+    <main style="background-color: #f5f7fa">
+      <div class="page login-page">
+        <form class="login-box form">
+          <h2>회원가입</h2>
+          <input type="text" class="input mt-20" placeholder="이메일" />
+          <input type="text" class="input mt-10" placeholder="이메일" />
+          <input type="text" class="input mt-10" placeholder="비밀번호" />
+          <input type="text" class="input mt-10" placeholder="비밀번호 확인" />
+          <input type="text" class="input mt-10" placeholder="이름" />
+          <div class="mt-10 phone-auth-area">
+            <input type="text" class="input" placeholder="휴대폰 번호" />
+            <button class="btn btn-info">인증번호 발송</button>
+          </div>
+          <div class="mt-10 phone-auth-area">
+            <input type="text" class="input" placeholder="인증하기" />
+            <button class="btn btn-info">인증하기</button>
+          </div>
+          <p class="checkbox-area mt-20">
+            <input type="checkbox" id="all-agree" /><label for="all-agree"
+              ><span style="font-weight: 500">전체 동의</span></label
+            >
+          </p>
+          <p class="checkbox-area mt-10">
+            <input type="checkbox" id="usage-agree" /><label for="usage-agree"
+              >서비스 이용 약관(필수)</label
+            >
+            <a class="link-show">내용보기</a>
+          </p>
+          <p class="checkbox-area mt-10">
+            <input type="checkbox" id="privacy-agree" /><label
+              for="privacy-agree"
+              >개인정보 수집 및 이용 정책(필수)</label
+            >
+            <a class="link-show">내용보기</a>
+          </p>
+          <p class="checkbox-area mt-10">
+            <input type="checkbox" id="marketing-agree" /><label
+              for="marketing-agree"
+              >캠페인 추천 및 마케팅 정보 수신(선택)</label
+            >
+            <a class="link-show">내용보기</a>
+          </p>
+          <button
+            class="btn btn-primary mt-20"
+            onclick="location.href='./signup.html'"
+          >
+            가입하기
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p class="logo">Band<span>&</span>Cast</p>
+        <p class="item mt-20">
+          <span>대표자 : 홍길동</span>
+          <span>주소 : 서울특별시 강남구 역삼동</span>
+        </p>
+        <p class="item">
+          <span>이메일 : abc@abc.com</span>
+          <span>사업자등록번호 : 123-123-1234</span>
+          <span>등록일 : 2023. 01. 01 </span>
+        </p>
+        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

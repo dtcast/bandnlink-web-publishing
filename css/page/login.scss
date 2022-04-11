@@ -1,0 +1,81 @@
+@import "../theme/color.scss";
+
+.login-page {
+  background-color: $color-flat-white;
+
+  .login-box,
+  .signup-box {
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    width: 96%;
+    max-width: 350px;
+    font-size: 13px;
+    color: $color-text-secondary;
+    display: flex;
+    flex-flow: column;
+
+    h2 {
+      font-size: 26px;
+      font-weight: 500;
+      color: $color-text-primary;
+      text-align: center;
+    }
+
+		.input {
+			border-radius: 0;
+		}
+
+    .check-area {
+      width: 100%;
+      line-height: 1;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+
+      label {
+        margin-left: 5px;
+      }
+
+      .space {
+        flex-grow: 1;
+      }
+
+      .find-pw {
+        border-bottom: 1px solid $color-text-secondary;
+				color: $color-text-secondary;
+      }
+    }
+
+    .phone-auth-area {
+      display: flex;
+
+      .input {
+        flex-grow: 1;
+      }
+
+      .btn {
+        margin-left: 5px;
+      }
+    }
+
+    .checkbox-area {
+      position: relative;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      line-height: 1;
+      width: 100%;
+
+      label {
+        margin-left: 5px;
+      }
+
+      .link-show {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Band&Cast</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- import CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  </head>
+  <body>
+    <header class="border">
+      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+      <ul class="menus">
+        <li>
+          <a href="./campaign.html">캠페인</a>
+        </li>
+        <li>
+          <a href="./insight.html">#인사이트</a>
+        </li>
+        <li>
+          <a href="./cs_notice_list.html">고객센터</a>
+        </li>
+        <li>
+          <a href="./login.html">로그인</a>
+        </li>
+      </ul>
+    </header>
+    <main class="cs-page page">
+      <aside>
+        <h2>고객센터</h2>
+        <ul class="side-nav">
+          <li>
+            <a href="./cs_notice_list.html">공지사항</a>
+          </li>
+          <li class="active">
+            <a href="./cs_faq_list.html">자주하는 질문</a>
+          </li>
+          <li>
+            <a href="./cs_qna_list.html">문의하기</a>
+          </li>
+          <li>
+            <a href="./cs_coop_list.html">제휴문의</a>
+          </li>
+        </ul>
+      </aside>
+      <div class="contents-container">
+        <h2>자주하는 질문</h2>
+        <hr />
+        <ul class="faq-list mt-20">
+          <li>
+            <p class="title">
+              <span>Q</span>내일은 비가 오나요?
+              <i class="el-icon-arrow-down"></i>
+            </p>
+            <p class="content">저도 잘 모르겠어요</p>
+          </li>
+          <li>
+            <p class="title">
+              <span>Q</span>내일은 비가 오나요?
+              <i class="el-icon-arrow-down"></i>
+            </p>
+            <p class="content">저도 잘 모르겠어요</p>
+          </li>
+          <li>
+            <p class="title">
+              <span>Q</span
+              >두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트두줄테스트
+              <i class="el-icon-arrow-down"></i>
+            </p>
+            <p class="content">
+              여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트여러줄테스트
+            </p>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p class="logo">Band<span>&</span>Cast</p>
+        <p class="item mt-20">
+          <span>대표자 : 홍길동</span>
+          <span>주소 : 서울특별시 강남구 역삼동</span>
+        </p>
+        <p class="item">
+          <span>이메일 : abc@abc.com</span>
+          <span>사업자등록번호 : 123-123-1234</span>
+          <span>등록일 : 2023. 01. 01 </span>
+        </p>
+        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      $(function () {
+        $(".faq-list > li > .title").click(function () {
+          var jThis = $(this).parent();
+          var isSelected = jThis.hasClass("active");
+          $(".faq-list > li").removeClass("active");
+          if (!isSelected) {
+            jThis.addClass("active");
+          }
+        });
+      });
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Band&Cast</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- import CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  </head>
+  <body>
+    <header class="border">
+      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+      <ul class="menus">
+        <li>
+          <a href="./campaign.html">캠페인</a>
+        </li>
+        <li>
+          <a href="./insight.html">#인사이트</a>
+        </li>
+        <li>
+          <a href="./manage.html">관리페이지</a>
+        </li>
+        <li>
+          <a href="./cs_notice_list.html">고객센터</a>
+        </li>
+      </ul>
+    </header>
+    <main class="page">
+      <aside>
+        <h2>관리페이지</h2>
+        <div class="card">
+          <div class="card-body">
+            <p>
+              <span class="color-primary">(주) 애드오너</span>
+              <a href="./manage_profile.html"
+                ><i class="el-icon-setting float-right"></i
+              ></a>
+            </p>
+            <p class="mt-10">(48305) 서울특별시 동작구 상도로37</p>
+            <p class="mt-10" style="font-size: 15px">담당자: 김민경 과장</p>
+          </div>
+        </div>
+        <div class="card mt-20">
+          <div class="card-body">
+            <a href="./manage_profile.html">
+              업체 정보 관리 <i class="el-icon-arrow-right float-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="card mt-20">
+          <div class="card-head">캠페인 목록</div>
+          <div class="card-body">
+            <p>
+              모집 대기
+              <a
+                class="color-primary float-right bold"
+                href="./manage_campaign.html"
+                >23</a
+              >
+            </p>
+            <p class="mt-10">
+              모집 중
+              <a
+                class="color-primary float-right bold"
+                href="./manage_campaign.html"
+                >21</a
+              >
+            </p>
+            <p class="mt-10">
+              진행 대기
+              <a
+                class="color-secondary float-right"
+                href="./manage_campaign.html"
+                >21</a
+              >
+            </p>
+            <p class="mt-10">
+              완료
+              <a
+                class="color-secondary float-right"
+                href="./manage_campaign.html"
+                >23</a
+              >
+            </p>
+          </div>
+          <div class="card-foot">
+            <a href="./manage_campaign_add.html">
+              신규 캠페인 등록
+              <i class="el-icon-arrow-right float-right"></i>
+            </a>
+          </div>
+          <div class="card-foot">
+            <a href="./manage_point.html">
+              포인트 관리
+              <i class="el-icon-arrow-right float-right"></i>
+            </a>
+          </div>
+          <div class="card-foot">
+            <a href="./manage_bookmark.html">
+              iLab 북마크
+              <i class="el-icon-arrow-right float-right"></i>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <div class="contents-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width: 200px">결제일</th>
+              <th>결제내역</th>
+              <th style="width: 150px">변동 포인트</th>
+              <th style="width: 250px">상세</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023-01-01</td>
+              <td>포인트 충전(신용카드)</td>
+              <td>
+                <span class="color-primary">+10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>인플루언서 보상</td>
+              <td>
+                <span class="color-danger">-10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-search"></i>
+                  상세내역
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>포인트 충전(신용카드)</td>
+              <td>
+                <span class="color-primary">+10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>환급</td>
+              <td>
+                <span class="color-danger">-10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>포인트 충전(신용카드)</td>
+              <td>
+                <span class="color-primary">+10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>포인트 충전(신용카드)</td>
+              <td>
+                <span class="color-primary">+10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>인플루언서 보상</td>
+              <td>
+                <span class="color-danger">-10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-search"></i>
+                  상세내역
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>포인트 충전(신용카드)</td>
+              <td>
+                <span class="color-primary">+10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>환급</td>
+              <td>
+                <span class="color-danger">-10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2023-01-01</td>
+              <td>포인트 충전(신용카드)</td>
+              <td>
+                <span class="color-primary">+10,000</span>
+              </td>
+              <td>
+                <button class="btn">
+                  <i class="el-icon-tickets"></i>
+                  영수증
+                </button>
+                <button class="btn">결제 취소</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="pagination">
+          <li><i class="el-icon-arrow-left"></i></li>
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li><i class="el-icon-arrow-right"></i></li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p class="logo">Band<span>&</span>Cast</p>
+        <p class="item mt-20">
+          <span>대표자 : 홍길동</span>
+          <span>주소 : 서울특별시 강남구 역삼동</span>
+        </p>
+        <p class="item">
+          <span>이메일 : abc@abc.com</span>
+          <span>사업자등록번호 : 123-123-1234</span>
+          <span>등록일 : 2023. 01. 01 </span>
+        </p>
+        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

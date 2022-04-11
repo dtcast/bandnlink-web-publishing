@@ -1,0 +1,363 @@
+@import "color.scss";
+
+.btn {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid $color-border;
+  color: $color-text-secondary;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.15s;
+  font-weight: 400;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+
+  @media screen and (max-width: 800px) {
+    padding: 10px 12px;
+  }
+
+  &:hover {
+    background-color: $color-flat-white;
+  }
+
+  > i {
+    margin-right: 8px;
+  }
+
+  &.btn-primary {
+    color: #fff;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+
+    &:hover {
+      background-color: $color-primary-light;
+    }
+  }
+
+  &.btn-success {
+    color: #fff;
+    background-color: $color-success;
+    border: 1px solid $color-success;
+
+    &:hover {
+      background-color: $color-success-light;
+    }
+  }
+
+  &.btn-warning {
+    color: #fff;
+    background-color: $color-warning;
+    border: 1px solid $color-warning;
+
+    &:hover {
+      background-color: $color-warning-dark;
+    }
+  }
+
+  &.btn-danger {
+    color: #fff;
+    background-color: $color-danger;
+    border: 1px solid $color-danger;
+
+    &:hover {
+      background-color: $color-danger-light;
+    }
+  }
+
+  &.btn-info {
+    color: #fff;
+    background-color: $color-info;
+    border: 1px solid $color-info;
+
+    &:hover {
+      background-color: $color-text-regular;
+    }
+  }
+}
+
+.pagination {
+  margin: 40px auto;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+
+  > li {
+    margin: 0 5px;
+    padding: 0 3px;
+    min-width: 26px;
+    height: 30px;
+    text-align: center;
+    background: $color-flat-white;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: $color-text-secondary;
+    transition: all 0.2s ease-in-out;
+
+    &.active {
+      background: $color-primary;
+      color: white;
+    }
+
+    &:hover {
+      background: $color-flat-white;
+      color: $color-text-regular;
+    }
+  }
+}
+
+.card {
+  border: 1px solid $color-border;
+  border-radius: 3px;
+
+  .card-head {
+    padding: 20px 15px;
+    border-bottom: 1px solid $color-border;
+    color: $color-text-regular;
+    background: $color-flat-white;
+    font-weight: 500;
+
+    a {
+      color: $color-text-regular;
+    }
+  }
+
+  .card-body {
+    padding: 20px 15px;
+    color: $color-text-secondary;
+
+    a {
+      color: $color-text-secondary;
+    }
+  }
+
+  .card-foot {
+    background: $color-flat-white;
+    border-top: 1px solid $color-border;
+    padding: 20px 15px;
+    color: $color-text-regular;
+
+    a {
+      color: $color-text-regular;
+    }
+  }
+}
+
+.select {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  line-height: 44px;
+  height: 44px;
+  color: $color-text-regular;
+  padding: 0 45px 0 15px;
+  border: 1px solid $color-border;
+  letter-spacing: 1px;
+
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background: url(../img/i_arr_down.svg) center right 20px no-repeat;
+}
+
+.badge {
+  padding: 6px 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 6px;
+
+  &.badge-gray {
+    background: $color-text-regular;
+    color: white;
+  }
+
+  &.badge-blue {
+    background: rgba(49, 130, 246, 0.1);
+    color: $color-primary;
+  }
+
+  &.badge-red {
+    color: #ff5252;
+    background: rgba(255, 82, 82, 0.1);
+  }
+}
+
+.search-input {
+  padding-left: 50px !important;
+  background: url(../img/i_search.svg) center left 20px no-repeat;
+}
+
+.btn-download {
+  padding-left: 36px;
+  background: url(../img/i_download.svg) center left 15px no-repeat;
+}
+
+.form {
+  .input-wrap {
+    display: flex;
+    align-items: center;
+
+    > .input {
+      flex-grow: 1;
+    }
+
+    > .btn {
+      margin-left: 5px;
+    }
+  }
+
+  .input-title {
+    color: $color-text-secondary;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    padding: 0 15px;
+    line-height: 40px;
+    border: 1px solid $color-border;
+    outline: none;
+    color: $color-text-regular;
+    font-size: 15px;
+    border-radius: 8px;
+
+    &::placeholder {
+      color: $color-text-placeholder;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-right: 3px;
+  }
+
+  label {
+    color: $color-text-secondary;
+  }
+}
+
+.table {
+  width: 100%;
+  font-size: 15px;
+
+  tr {
+    height: 44px;
+  }
+
+  th {
+    text-align: center;
+    color: $color-text-regular;
+  }
+
+  td {
+    min-width: 60px;
+    padding: 5px 10px;
+    border-top: 1px solid $color-border;
+    text-align: center;
+    color: #888;
+
+    a {
+      color: #888;
+    }
+  }
+}
+
+.hover-table {
+	border-top: 1px solid $color-border-heavy;
+
+	tbody > tr {
+    transition: all 0.2s ease-out;
+
+    &.active,
+    &:hover {
+      background-color: $color-flat-white;
+    }
+  }
+}
+
+.form.table {
+  tbody {
+    th {
+      background: $color-flat-white;
+    }
+
+    td {
+      text-align: left;
+    }
+  }
+}
+
+
+.popup-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .popup {
+    position: relative;
+    padding: 33px 35px;
+    background: white;
+    border-radius: 10px;
+    min-width: 840px;
+
+    .popup-title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    .popup-body {
+      margin-top: 30px;
+
+      .thumb {
+        width: 32px;
+        height: 32px;
+        background: $color-text-regular;
+        border-radius: 8px;
+      }
+    }
+
+    .popup-close {
+      top: 30px;
+      right: 26px;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: none;
+      outline: none;
+      background: url(../img/i_popup_close.svg) center no-repeat;
+      cursor: pointer;
+    }
+
+    .badge {
+      display: block;
+      margin-bottom: 4px;
+      background: $color-text-regular;
+      color: white;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Band&Cast</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- import CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  </head>
+  <body>
+    <header class="border">
+      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+      <ul class="menus">
+        <li>
+          <a href="./campaign.html">캠페인</a>
+        </li>
+        <li>
+          <a href="./insight.html">#인사이트</a>
+        </li>
+				<li>
+          <a href="./manage.html">관리페이지</a>
+        </li>
+        <li>
+          <a href="./cs_notice_list.html">고객센터</a>
+        </li>
+      </ul>
+    </header>
+    <main class="page">
+      <aside>
+        <div class="card">
+          <div class="card-body">
+            <p>
+              <span class="color-primary">(주) 애드오너</span>
+              <a href="#"><i class="el-icon-setting float-right"></i></a>
+            </p>
+            <p class="mt-10">(48305) 서울특별시 동작구 상도로37</p>
+            <p class="mt-10" style="font-size: 15px">담당자: 김민경 과장</p>
+          </div>
+        </div>
+        <div class="card mt-20">
+          <div class="card-body">
+            <a href="mypage_profile.html">
+							나의 정보 관리 <i class="el-icon-arrow-right float-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="card mt-20">
+          <div class="card-head">캠페인 목록</div>
+          <div class="card-body">
+            <p>
+              모집 대기
+              <span class="color-primary float-right bold">23</span>
+            </p>
+            <p class="mt-10">
+              모집 중
+              <span class="color-primary float-right bold">21</span>
+            </p>
+            <p class="mt-10">
+              진행 대기
+              <span class="color-secondary float-right">21</span>
+            </p>
+            <p class="mt-10">
+              완료
+              <span class="color-secondary float-right">23</span>
+            </p>
+          </div>
+          <div class="card-foot">
+            <a href="">
+              신규 캠페인 등록
+              <i class="el-icon-arrow-right float-right"></i>
+            </a>
+          </div>
+          <div class="card-foot">
+            <a href="">
+              포인트 관리
+              <i class="el-icon-arrow-right float-right"></i>
+            </a>
+          </div>
+          <div class="card-foot">
+            <a href="">
+              iLab 북마크
+              <i class="el-icon-arrow-right float-right"></i>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <div class="contents-container">
+        <h2>프로필 관리</h2>
+        <hr />
+        <div
+          class="form"
+          style="
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+          "
+        >
+          <h4 class="mt-20">가입 정보</h4>
+          <p class="input-title mt-10">이메일</p>
+          <div class="input-wrap">
+            <input type="text" placeholder="이메일 주소" class="input" value="s@typer.kr"/>
+            <button class="btn btn-info">변경</button>
+          </div>
+          <div class="input-title mt-10">비밀번호</div>
+          <button class="btn btn-warning">비밀번호 재설정</button>
+          <div class="input-wrap"></div>
+          <div class="input-title mt-10">담당자 연락처</div>
+          <input class="input" placeholder="010-0000-0000" value="010-1234-1234"/>
+					<div class="input-title mt-10">담당자 이름</div>
+          <input class="input" placeholder="담당자 이름" value="홍길동"/>
+					<div class="input-title mt-10">부서, 직급·직책</div>
+          <input class="input" placeholder="부서 / 직급·직책" value="영업부 / 부장"/>
+
+					<h4 class="mt-20">업체 정보</h4>
+          <p class="input-title mt-10">구분</p>
+          <div class="input-wrap">
+						<input type="radio" id="business-type1" name="business-type" checked/>
+						<label for="business-type1" >개인 사업자</label>
+						<input type="radio" id="business-type2" name="business-type" class="ml-10">
+						<label for="business-type2" >법인 사업자</label>
+          </div>
+					<div class="input-title mt-10">사업자 주소</div>
+          <div class="input-wrap">
+						<input class="input" placeholder="도로명 주소" value="서울시 강남대로 12"/>
+						<button class="btn btn-info">찾기</button>
+					</div>
+					<div class="input-title mt-10">상세 주소</div>
+          <input class="input" placeholder="상세 주소" value="아파트 110동 2022호"/>
+					<button class="btn btn-primary mt-20">저장</button>
+        </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p class="logo">Band<span>&</span>Cast</p>
+        <p class="item mt-20">
+          <span>대표자 : 홍길동</span>
+          <span>주소 : 서울특별시 강남구 역삼동</span>
+        </p>
+        <p class="item">
+          <span>이메일 : abc@abc.com</span>
+          <span>사업자등록번호 : 123-123-1234</span>
+          <span>등록일 : 2023. 01. 01 </span>
+        </p>
+        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

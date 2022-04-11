@@ -1,0 +1,50 @@
+.color-primary {
+  color: #3182f6 !important;
+}
+
+.color-success {
+  color: #67c23a !important;
+}
+
+.color-warning {
+  color: #e6a23c !important;
+}
+
+.color-danger {
+  color: #f56c6c !important;
+}
+
+.color-info {
+  color: #8b95a1 !important;
+}
+
+.bg-flat-white {
+  background-color: #f5f7fa;
+}
+
+.border-top {
+  border-top: 1px solid #e9eaec;
+}
+
+.border-top-black {
+  border-top: 1px solid #1f2e3d;
+}
+
+.my-page .categories > li,
+.manage-page .categories > li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  font-size: 13px;
+  float: left;
+  background: #f5f7fa;
+  cursor: pointer;
+}
+
+.my-page .categories > li:hover, .my-page .categories > li.active,
+.manage-page .categories > li:hover,
+.manage-page .categories > li.active {
+  background: #3182f6;
+  color: white;
+}
+/*# sourceMappingURL=my.css.map */

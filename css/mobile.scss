@@ -1,0 +1,195 @@
+@media screen and (max-width: 800px) {
+  header {
+    .logo {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .menus {
+      display: none;
+    }
+  }
+
+  .page {
+    display: block;
+    padding: 40px 0;
+    width: 100%;
+    overflow: hidden;
+
+    aside {
+      margin: 0 10px 20px;
+      width: auto;
+
+			h2 {
+				display: none;
+			}
+
+      .side-nav {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin-top: -20px;
+
+        > li {
+          margin: 5px;
+          float: left;
+          background-color: $color-flat-white;
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: 14px;
+
+          a {
+            color: $color-text-regular;
+          }
+
+          &.active {
+            background-color: $color-primary;
+
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cs-page {
+    .contents-container {
+      padding: 0 15px;
+
+			h2 {
+				padding: 10px 0;
+			}
+
+      .table {
+        thead {
+          display: none;
+        }
+        .number {
+          display: none;
+        }
+        tr {
+          position: relative;
+
+          td {
+            padding-bottom: 35px;
+          }
+        }
+
+        .date {
+          border: none;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          padding: 0;
+          display: block;
+          font-size: 13px;
+          white-space: nowrap;
+          color: $color-info;
+        }
+      }
+    }
+  }
+
+  .campaign-page {
+    .form {
+      margin: 0 25px;
+      flex-flow: column;
+		
+      .select-wrap {
+        display: flex;
+        flex-flow: row;
+
+        .select {
+          margin-bottom: 15px !important;
+          flex-grow: 1;
+
+          &:last-of-type {
+            margin-left: 15px !important;
+          }
+        }
+      }
+    }
+
+    .campaigns {
+      margin: 10px 0 !important;
+      overflow: hidden;
+
+      > li {
+        width: auto !important;
+        margin: 30px 25px 0;
+      }
+    }
+  }
+
+  .campaign-detail-page {
+    .contents-container {
+      width: auto;
+      padding: 20px 0;
+
+      .swiper {
+        display: none;
+      }
+
+      .summary-infos {
+        margin-top: 24px;
+        flex-flow: column;
+
+        > li {
+          position: relative;
+          width: auto;
+          padding: 19px;
+          display: flex;
+          flex-flow: row;
+
+          &::before {
+            display: block;
+            content: " ";
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+            right: 20px;
+            height: 1px;
+            border-top: 1px solid $color-border;
+          }
+
+          p {
+            margin: 0 !important;
+          }
+
+          .title {
+            flex-grow: 1;
+          }
+        }
+      }
+
+      .border-section {
+        border: none;
+      }
+    }
+
+    .side-info {
+      position: fixed;
+      margin: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+
+      .infos > li {
+        padding: 25px !important;
+      }
+    }
+  }
+
+  .login-page .login-box {
+    width: 80%;
+    padding: 5%;
+  }
+
+  .login-page .signup-box {
+    width: 80%;
+    padding: 5%;
+  }
+}

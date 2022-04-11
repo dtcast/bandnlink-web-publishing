@@ -1,0 +1,68 @@
+
+.cs-page {
+	display: flex;
+	flex-flow: row;
+
+	.faq-list {
+		> li {
+			border-bottom: 1px solid $color-border;
+	
+			.title {
+				position: relative;
+				padding: 20px 50px 20px 40px;
+				text-indent: -42px;
+				font-size: 16px;
+				line-height: 1.6;
+				color: $color-text-secondary;
+				cursor: pointer;
+				transition: all 0.2s ease-in-out;
+	
+				> span {
+					color: $color-text-placeholder;
+					margin-left: 10px;
+					margin-right: 20px;
+				}
+	
+				> i {
+					text-indent: 0;
+					position: absolute;
+					right: 0px;
+					top: 20px;
+					transition: all 0.3s ease-in-out;
+				}
+			}
+	
+			.content {
+				padding: 0 30px;
+				height: 0;
+				background-color: $color-flat-white;
+				color: $color-text-secondary;
+				line-height: 1.8;
+				opacity: 0;
+				transition: all 0.3s ease-in-out;
+			}
+	
+			&.active {
+				.title {
+					color: black;
+	
+					> i {
+						transform: rotate(180deg);
+					}
+				}
+	
+				.content {
+					padding: 20px 30px;
+					height: auto;
+					opacity: 1;
+				}
+			}
+	
+			&:hover {
+				.title {
+					color: $color-primary;
+				}
+			}
+		}
+	}
+}
