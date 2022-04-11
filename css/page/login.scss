@@ -59,14 +59,13 @@
         flex-grow: 1;
         width: 100%;
 
-        .time {
+        .desc {
           position: absolute;
           right: 10px;
           top: 50%;
           width: auto;
           z-index: 9;
           transform: translateY(-50%);
-          color: $color-danger;
           font-size: 13px;
           font-weight: 500;
         }

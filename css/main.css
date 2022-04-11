@@ -895,8 +895,8 @@ footer .container .item span {
   width: 100%;
 }
 
-.login-page .login-box .phone-auth-area .input-wrap .time,
-.login-page .signup-box .phone-auth-area .input-wrap .time {
+.login-page .login-box .phone-auth-area .input-wrap .desc,
+.login-page .signup-box .phone-auth-area .input-wrap .desc {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -904,7 +904,6 @@ footer .container .item span {
   z-index: 9;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: #f56c6c;
   font-size: 13px;
   font-weight: 500;
 }
