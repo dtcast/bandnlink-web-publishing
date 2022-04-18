@@ -166,29 +166,41 @@
         const j = $("#email-input");
         const value = j.val();
 
+        // 데이터 파싱
+        value = value.trim();
+        j.val(value);
+
         clearInputError(j);
 
-        // 1. 널값 체크
-        let isNull = value.length == 0;
-        if (isNull) {
+        // 입력 여부 체크
+        if (value.length == 0) {
           showInputError(j, "이메일을 입력해주세요");
           return;
         }
 
-        // 2. 형식 체크
+        // 이메일 형식, 최대 길이 체크
 
-        // 3. 서버와 아이디 중복 체크
+        // 중복 체크
         clearTimeout(emailCheckTimer);
-        setTimeout(function () {}, 200);
+        setTimeout(function () {
+          // API 호출
+        }, 200);
       }
 
-      $("#email-input")
-        .focusout(function () {
-          checkEmailInput();
-        })
-        .keyup(function () {
-          checkEmailInput();
-        });
+      function initSignup() {
+        // 데이터 바인딩
+        $("#email-input")
+          .focusout(function () {
+            checkEmailInput();
+          })
+          .keyup(function () {
+            checkEmailInput();
+          });
+      }
+      
+			$(function () {
+        initSignup();
+      });
     </script>
   </body>
 </html>
