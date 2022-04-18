@@ -47,22 +47,31 @@
       <div class="page login-page">
         <form class="login-box form">
           <h2>회원가입</h2>
-          <input type="text" class="input mt-20" placeholder="이메일" />
+          <input
+            type="text"
+            class="input mt-20"
+            placeholder="이메일"
+            id="email-input"
+          />
           <input type="text" class="input mt-10" placeholder="이메일" />
           <input type="text" class="input mt-10" placeholder="비밀번호" />
-					<p class="mt-10" style="font-size: 12px">
-						<i class="el-icon-info"></i>
-						영문 대문자/영문 소문자/숫자/특수문자 중 2가지 이상 조합, 8자~32자
-					</p>
-					<p class="mt-10 color-danger" style="font-size: 12px">
-						<i class="el-icon-error"></i>
-						비밀번호가 형식에 맞지 않습니다
-					</p>
-          <input type="text" class="input error mt-10" placeholder="비밀번호 확인" />
-					<p class="mt-10 color-danger" style="font-size: 12px">
-						<i class="el-icon-error"></i>
-						비밀번호가 일치하지 않습니다
-					</p>
+          <p class="mt-10" style="font-size: 12px">
+            <i class="el-icon-info"></i>
+            영문 대문자/영문 소문자/숫자/특수문자 중 2가지 이상 조합, 8자~32자
+          </p>
+          <p class="mt-10 color-danger" style="font-size: 12px">
+            <i class="el-icon-error"></i>
+            비밀번호가 형식에 맞지 않습니다
+          </p>
+          <input
+            type="text"
+            class="input error mt-10"
+            placeholder="비밀번호 확인"
+          />
+          <p class="mt-10 color-danger" style="font-size: 12px">
+            <i class="el-icon-error"></i>
+            비밀번호가 일치하지 않습니다
+          </p>
           <input type="text" class="input mt-10" placeholder="이름" />
           <div class="mt-10 phone-auth-area">
             <input type="text" class="input" placeholder="휴대폰 번호" />
@@ -75,9 +84,15 @@
             </div>
             <button class="btn btn-info">인증하기</button>
           </div>
-					<div class="mt-10 phone-auth-area">
+          <div class="mt-10 phone-auth-area">
             <div class="input-wrap">
-              <input type="text" value="010-2650-5108" class="input" placeholder="휴대폰번호" readonly/>
+              <input
+                type="text"
+                value="010-2650-5108"
+                class="input"
+                placeholder="휴대폰번호"
+                readonly
+              />
               <span class="desc color-primary">인증됨</span>
             </div>
           </div>
@@ -130,5 +145,50 @@
         <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
       </div>
     </footer>
+    <script>
+      function clearInputError(j) {
+        j.removeClass("error");
+        j.next(".err-msg").remove();
+      }
+
+      function showInputError(j, message) {
+        j.addClass("error");
+        j.after(
+          '<p class="mt-10 color-danger err-msg" style="font-size: 12px"> <i class="el-icon-error"></i> <span>' +
+            message +
+            "</span> </p>"
+        );
+      }
+
+      let emailCheckTimer = null;
+      function checkEmailInput() {
+        // 유효성 체크
+        const j = $("#email-input");
+        const value = j.val();
+
+        clearInputError(j);
+
+        // 1. 널값 체크
+        let isNull = value.length == 0;
+        if (isNull) {
+          showInputError(j, "이메일을 입력해주세요");
+          return;
+        }
+
+        // 2. 형식 체크
+
+        // 3. 서버와 아이디 중복 체크
+        clearTimeout(emailCheckTimer);
+        setTimeout(function () {}, 200);
+      }
+
+      $("#email-input")
+        .focusout(function () {
+          checkEmailInput();
+        })
+        .keyup(function () {
+          checkEmailInput();
+        });
+    </script>
   </body>
 </html>
