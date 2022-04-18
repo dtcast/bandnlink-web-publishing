@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Band&Cast</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -66,82 +66,48 @@
       </aside>
       <div class="contents-container">
         <h2>제휴문의</h2>
-        <hr />
-        <form action="">
-          <table class="table m-20 form">
-            <tbody>
-              <tr>
-                <th style="width: 180px">회사(기관)명</th>
-                <td>
-                  <input
-                    type="text"
-                    class="input"
-                    style="width: 100%; box-sizing: border-box"
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>담당자명</th>
-                <td>
-                  <input
-                    type="text"
-                    class="input"
-                    style="width: 100%; box-sizing: border-box"
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>전화번호</th>
-                <td>
-                  <input
-                    type="text"
-                    class="input"
-                    style="width: 100%; box-sizing: border-box"
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>이메일</th>
-                <td>
-                  <input
-                    type="text"
-                    class="input"
-                    style="width: 100%; box-sizing: border-box"
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>내용</th>
-                <td>
-                  <textarea
-                    class="input"
-                    style="
-                      width: 100%;
-                      box-sizing: border-box;
-                      min-height: 200px;
-                    "
-                    required
-                  ></textarea>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <button
-            class="btn btn-primary"
-						type="submit"
-            style="display: block; margin: 20px auto"
-          >
-            <i class="el-icon-edit"></i>
-            등록하기
-          </button>
-        </form>
+        <div class="board-detail">
+          <div class="board-header">
+            <p class="title">제휴문의입니다</p>
+            <p class="date">2022-12-31 01:23:45</p>
+          </div>
+          <div class="board-body">
+            내용입니다<br />
+            내용입니다<br />
+            내용입니다<br />
+            내용입니다<br />
+            내용입니다<br />
+          </div>
+        </div>
+        <div class="answer-container">
+          <ul>
+            <li class="answer-item">
+              <p class="title">
+                <span class="username">관리자</span>
+                <span class="date">2022-03-15 05:08</span>
+              </p>
+              <div class="desc">처리되었습니다</div>
+            </li>
+          </ul>
+          <div class="answer-form">
+            <div class="answer-input"><textarea></textarea></div>
+            <div class="mt-20 text-right">
+              <div class="btn btn-primary">
+                <i class="el-icon-finished"></i>등록하기
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-20 text-right">
+          <div class="btn"><i class="el-icon-edit"></i>수정</div>
+          <div class="btn"><i class="el-icon-delete"></i>삭제</div>
+          <div class="btn btn-primary" onclick="history.back();">
+            <i class="el-icon-finished"></i>목록으로
+          </div>
+        </div>
       </div>
     </main>
-    <footer>
+		<footer>
       <div class="container">
         <p class="logo">Band<span>&</span>Cast</p>
         <p class="item mt-20">
@@ -156,6 +122,5 @@
         <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
       </div>
     </footer>
-    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
