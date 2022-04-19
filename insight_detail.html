@@ -249,14 +249,36 @@
               .attr('r', row.size)
               .attr('fill', row.depth === 1 ? '#3182F6' : '#4C5864')
               .style('filter', 'url(#drop-shadow)');
-            d3.select(this)
-              .append('text').text(row.name)
-              .attr('dy', 6)
-              .style('text-anchor', 'middle')
-              .style('font-size', ['20px', '16px', '14px', '12px'][row.depth - 1])
-              .style('font-weight', '700')
-              .style('fill', '#fff')
-              .attr('class', 'node-label');
+
+            const text = d3.select(this)
+              .append('text');
+            
+            let lineNumber = 0;
+
+            if (row.name.includes(' ')) {
+              const words = row.name.split(' ');
+
+              words.forEach(word => {
+                text.append('tspan')
+                .attr('x', 0)
+                .attr('y', 0)
+                .attr('dy', (++lineNumber * 14) - (words.length * 8)).text(word)
+                .style('text-anchor', 'middle')
+                .style('font-size', ['20px', '16px', '14px', '12px'][row.depth - 1])
+                .style('font-weight', '700')
+                .style('fill', '#fff')
+                .attr('class', 'node-label');
+              });
+            } else {
+              text.text(row.name)
+                .attr('dy', 6)
+                .style('text-anchor', 'middle')
+                .style('font-size', ['20px', '16px', '14px', '12px'][row.depth - 1])
+                .style('font-weight', '700')
+                .style('fill', '#fff')
+                .attr('class', 'node-label');
+            }
+            
             d3.select(this)
               .on('click', () => {
                 if (row.depth === 1) return;
