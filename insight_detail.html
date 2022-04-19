@@ -48,11 +48,8 @@
     <main class="page insight-detail-page">
       <div>
         <p class="title">맛집 + 분위기</p>
-        <div class="chart" id="canvas">
-          <div class="netwrok-graph">
-            <svg id="NETWORK_GRAPH">
-            </svg>
-          </div>
+        <div id="chart">
+          <svg></svg>
         </div>
       </div>
       <div>
@@ -82,221 +79,235 @@
     </footer>
   </body>
   <style>
-    .netwrok-graph {
+    #chart {
       width: 800px;
     }
   </style>
   <script>
-    var NETWORK_DATA = {
-  "nodes": [
-	  {
-		"id": "맛집",
-		"value": 8,
-		"depth": 0
-	  },
-	  {
-		"id": "한식",
-		"value": 6,
-		"depth": 1
-	  },
-	  {
-		"id": "일식",
-		"value": 6,
-		"depth": 1
-	  },
-    {
-		"id": "양식",
-		"value": 6,
-		"depth": 1
-	  },
-    {
-		"id": "중식",
-		"value": 6,
-		"depth": 1
-	  },
-    {
-		"id": "떡국",
-		"value": 4,
-		"depth": 2
-	  },
-    {
-		"id": "수제비",
-		"value": 4,
-		"depth": 2
-	  },
-    {
-		"id": "자장면",
-		"value": 4,
-		"depth": 2
-	  },
-    {
-		"id": "마파두부",
-		"value": 4,
-		"depth": 2
-	  },
-    {
-		"id": "스시",
-		"value": 4,
-		"depth": 2
-	  },
-    {
-		"id": "라멘",
-		"value": 4,
-		"depth": 2
-	  },
-    {
-		"id": "피자",
-		"value": 4,
-		"depth": 2
-	  },
-    {
-		"id": "파스타",
-		"value": 4,
-		"depth": 2
-	  },
-   ],
-  "links": [
-	  {
-		"source": "맛집",
-		"target": "한식",
-	  },
-	  {
-		"source": "맛집",
-		"target": "일식",
-	  },
-	  {
-		"source": "맛집",
-		"target": "중식",
-	  },
-	  {
-		"source": "맛집",
-		"target": "양식",
-	  },
-	  {
-		"source": "한식",
-		"target": "떡국",
-	  },
-	  {
-		"source": "한식",
-		"target": "수제비",
-	  },
-	  {
-		"source": "중식",
-		"target": "자장면",
-	  },
-	  {
-		"source": "중식",
-		"target": "마파두부",
-	  },
-	  {
-		"source": "일식",
-		"target": "스시",
-	  },
-	  {
-		"source": "일식",
-		"target": "라멘",
-	  },
-	  {
-		"source": "양식",
-		"target": "피자",
-	  },
-	  {
-		"source": "양식",
-		"target": "파스타",
-	  }
-	]
-};
-    
-		var networkGraph = {
-			createGraph : function(){
-				var links = NETWORK_DATA.links.map(function(d){
-								return Object.create(d)
-							});
-				var nodes = NETWORK_DATA.nodes.map(function(d){
-								return Object.create(d)
-							});
-				var color = function(d){
-					var scale = d3.scaleOrdinal(d3.schemeCategory10);
-					return (scale(d.group));
-				};
+    let selectedSet = new Set();
 
-				var width = 500;
-				var height = 500;
+    const data = [
+      {
+        "id": 1,
+        "name": "맛집",
+        "size": 80,
+        "depth": 1,
+        "postCount": 10
+      },
+      {
+        "id": 2,
+        "name": "분위기",
+        "size": 80,
+        "depth": 1,
+        "postCount": 10
+      },
+      {
+        "id": 3,
+        "name": "인테리어",
+        "size": 60,
+        "parentIds": [1, 2],
+        "depth": 2,
+        "postCount": 10
+      },
+      {
+        "id": 4,
+        "name": "데이트",
+        "size": 60,
+        "parentIds": [1, 2],
+        "postCount": 10
+      },
+      {
+        "id": 5,
+        "name": "디저트",
+        "size": 50,
+        "parentIds": [1, 2],
+        "depth": 2
+      },
+      {
+        "id": 6,
+        "name": "카페",
+        "size": 40,
+        "parentIds": [4],
+        "depth": 2
+      },
+      {
+        "id": 7,
+        "name": "압구정",
+        "size": 40,
+        "parentIds": [4],
+        "depth": 2
+      },
+      {
+        "id": 8,
+        "name": "파스타",
+        "size": 40,
+        "parentIds": [4],
+        "depth": 3
+      },
+      {
+        "id": 9,
+        "name": "로데오 거리",
+        "size": 30,
+        "parentIds": [7],
+        "depth": 4
+      },
+      {
+        "id": 10,
+        "name": "신사동",
+        "size": 30,
+        "parentIds": [7],
+        "depth": 4
+      },
+      {
+        "id": 11,
+        "name": "현대 백화점",
+        "size": 30,
+        "parentIds": [7],
+        "depth": 4
+      }
+    ];
 
-				var simulation = d3.forceSimulation(nodes)
-						  .force("link", d3.forceLink(links).id( function(d){ return d.id }))
-						  .force("charge", d3.forceManyBody().strength(-100))
-						  .force("center", d3.forceCenter(width / 2, height / 2))
-						  .force("collide",d3.forceCollide().radius( function(d){ return d.value*8}) );
+		const networkGraph = {
+      createGrapth: () => {
+        const nodes = data.map(row => {
+          return Object.create({
+            id: row.id,
+            name: row.name,
+            size: row.size,
+            depth: row.depth,
+          });
+        });
 
-				var svg = d3.select("#NETWORK_GRAPH")
-							.attr("viewBox", [0, 0, width, height]);
-				var gHolder = svg.append("g")
-									.attr("class", "g-holder");
-				var link = gHolder.append("g")
-								.attr("stroke", "#999")
-								.attr("stroke-opacity", 0.6)
-							.selectAll("line")
-								.data(links)
-								.join("line")
-									.attr("stroke-width", function(d){ return Math.sqrt(d.value*5)} );
+        const links = data.filter(row => {
+          return row.parentIds !== undefined;
+        }).map(row => {
+          return row.parentIds.map(parentId => {
+            return Object.create({
+              source: parentId,
+              target: row.id,
+            });
+          });
+        }).flat();
 
-				var node = gHolder.append("g")
-							.attr("class", "circle-node-holder")
-						.selectAll("g")
-							.data(nodes)
-							.enter()
-							.append("g")
-							.each(function(d){
-								d3.select(this)
-									.append("circle")
-									.attr("r", d.value*5)
-									.attr("fill", ['#3182f6', '#09cc7a', '#4c5864'][d.depth]);
-								d3.select(this)
-									.append("text").text(d.id)
-									.attr("dy",6)
-									.style("text-anchor","middle")
-                  .style("font-size", ['22px', '16px', '12px'][d.depth])
-                  .style("fill", "#fff")
-									.attr("class", "node-label")
-							}).call(networkGraph.drag(simulation));
+        const width = 800;
+        const height = 800;
+        
+        const simulation = d3.forceSimulation(nodes)
+          .force('link', d3.forceLink(links).id(row => row.id))
+          .force('charge', d3.forceManyBody().strength(-100))
+          .force('center', d3.forceCenter(width / 2, height / 2))
+          .force('collide', d3.forceCollide().radius(row => row.size + 20));
+        
+        const svg = d3.select('#chart > svg')
+          .attr('viewBox', [0, 0, width, height]);
+        
+        const gHolder = svg.append('g')
+          .attr('class', 'g-holder');
+        
+        const link = gHolder.append('g')
+          .attr('stroke', '#999')
+          .attr('stroke-opacity', 0.6)
+          .selectAll('line')
+          .data(links)
+          .join('line')
+          .attr('stroke-width', 2)
+          .attr('stroke-dasharray', 2.67372);
 
-				simulation.on("tick", function(){
-					link.attr("x1", function(d){ return d.source.x; })
-						.attr("y1", function(d){ return d.source.y; })
-						.attr("x2", function(d){ return d.target.x; })
-						.attr("y2", function(d){ return d.target.y; });
+        const defs = svg.append('defs');
 
-					node.attr("transform", function(d) { return "translate("+d.x+","+ d.y+")"; });
-				});
+        const filter = defs.append('filter')
+          .attr('id', 'drop-shadow')
+          .attr('height', '130%');
+        
+        filter.append("feGaussianBlur")
+          // .attr("in", "SourceAlpha")
+          .attr("stdDeviation", 3)
+          .attr("result", "blur");
 
-				return svg.node();
-			},
-			drag : function(simulation){
-				function dragstarted(d) {
-					if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-					d.fx = d.x;
-					d.fy = d.y;
-				}
+        filter.append("feOffset")
+          .attr("in", "blur")
+          .attr("dx", 0)
+          .attr("dy", 0)
+          .attr("result", "offsetBlur");
 
-				function dragged(d) {
-					d.fx = d3.event.x;
-					d.fy = d3.event.y;
-				}
+        const feMerge = filter.append("feMerge");
 
-				function dragended(d) {
-					if (!d3.event.active) simulation.alphaTarget(0);
-					d.fx = null;
-					d.fy = null;
-				}
+        feMerge.append("feMergeNode")
+          .attr("in", "offsetBlur")
+        feMerge.append("feMergeNode")
+          .attr("in", "SourceGraphic");
+        
+        const node = gHolder.append('g')
+          .attr('class', 'circle-node-holder')
+          .selectAll('g')
+          .data(nodes)
+          .enter()
+          .append('g')
+          .each(function (row) {
+            const circle = d3.select(this)
+              .append('circle')
+              .attr('r', row.size)
+              .attr('fill', row.depth === 1 ? '#3182F6' : '#4C5864')
+              .style('filter', 'url(#drop-shadow)');
+            d3.select(this)
+              .append('text').text(row.name)
+              .attr('dy', 6)
+              .style('text-anchor', 'middle')
+              .style('font-size', ['20px', '16px', '14px', '12px'][row.depth - 1])
+              .style('fill', '#fff')
+              .attr('class', 'node-label');
+            d3.select(this)
+              .on('click', () => {
+                if (row.depth === 1) return;
 
-				return d3.drag()
-					.on("start", dragstarted)
-					.on("drag", dragged)
-					.on("end", dragended);
-			}
-		}
+                if (selectedSet.has(row.name)) {
+                  circle.attr('fill', '#4C5864');
+                  selectedSet.delete(row.name);
+                } else {
+                  circle.attr('fill', '#09CC7A');
+                  selectedSet.add(row.name);
+                }
+              });
+          }).call(networkGraph.drag(simulation));
+        
+        simulation.on('tick', () => {
+          link.attr('x1', row => row.source.x)
+            .attr('y1', row => row.source.y)
+            .attr('x2', row => row.target.x)
+            .attr('y2', row => row.target.y);
+          
+          node.attr('transform', row => `translate(${row.x}, ${row.y})`);
+        });
 
-		networkGraph.createGraph();
+        return svg.node();
+      },
+      drag: (simulation) => {
+        function dragstarted(row) {
+          if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+
+          row.fx = row.x;
+          row.fy = row.y;
+        }
+
+        function dragged(row) {
+          row.fx = d3.event.x;
+          row.fy = d3.event.y;
+        }
+
+        function dragended(row) {
+          if (!d3.event.active) simulation.alphaTarget(0);
+
+          row.fx = null;
+          row.fy = null;
+        }
+
+        return d3.drag()
+          .on('start', dragstarted)
+          .on('drag', dragged)
+          .on('end', dragended);
+      }
+    }
+
+    networkGraph.createGrapth();
   </script>
 </html>
