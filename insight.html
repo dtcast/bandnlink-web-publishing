@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Band&Cast</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -23,7 +23,7 @@
     <!-- import JavaScript -->
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   </head>
-  <body class="bg-flat-white">
+  <body>
     <header class="border">
       <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
       <ul class="menus">
@@ -42,14 +42,24 @@
       </ul>
     </header>
     <main class="page insight-page">
-      <div class="container">
-				<p class="title">분석을 원하는 키워드를 입력하세요</p>
+      <aside>
+        <h2 class="desktop-only">#인사이트</h2>
+        <ul class="side-nav">
+          <li class="active">
+            <a href="./insight.html">분석하기</a>
+          </li>
+          <li>
+            <a href="./insight2.html">분석 보고서</a>
+          </li>
+        </ul>
+      </aside>
+      <div class="contents-container">
+        <p class="title">분석을 원하는 키워드를 입력하세요</p>
         <form class="input-wrap" action="./insight_detail.html">
-					<input type="text" placeholder="e.g. 맛집 + 분위기" name="keyword" />
-					<button class="btn-search"></button>
-				</form>
+          <input type="text" placeholder="e.g. 맛집 + 분위기" name="keyword" />
+          <button class="btn-search"></button>
+        </form>
       </div>
-      <!-- <img src="./img/insight.png" alt="" style="width: 100%" /> -->
     </main>
     <footer>
       <div class="container">

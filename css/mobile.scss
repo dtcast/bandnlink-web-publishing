@@ -55,6 +55,10 @@
     }
   }
 
+	.insight-page, .insight2-page {
+		flex-flow: column !important;
+	}
+
   .cs-page {
     .contents-container {
       padding: 0 15px;
@@ -194,3 +198,4 @@
     padding: 5%;
   }
 }
+

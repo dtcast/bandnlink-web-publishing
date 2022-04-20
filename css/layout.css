@@ -203,6 +203,7 @@ footer .container .item span {
 }
 
 .page .contents-container {
+  position: relative;
   padding: 0 20px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
