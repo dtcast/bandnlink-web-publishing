@@ -167,16 +167,7 @@
 
 		const networkGraph = {
       createGrapth: () => {
-        const nodes = data.map(row => {
-          if (row.depth === 1) selectedSet.add(row.name);
-
-          return Object.create({
-            id: row.id,
-            name: row.name,
-            size: row.size,
-            depth: row.depth,
-          });
-        });
+        const nodes = data.map(Object.create);
 
         const links = data.filter(row => {
           return row.parentIds !== undefined;
@@ -197,7 +188,7 @@
           .force('charge', d3.forceManyBody().strength(-100))
           .force('center', d3.forceCenter(width / 2, height / 2))
           .force('collide', d3.forceCollide().radius(row => row.size * 1.3));
-        
+
         const svg = d3.select('#chart > svg')
           .attr('viewBox', [0, 0, width, height]);
         
@@ -212,6 +203,16 @@
           .join('line')
           .attr('stroke-width', 2)
           .attr('stroke-dasharray', 2.67372);
+        
+        const tooltip = d3.select('#chart')
+          .append('div')
+          .style('position', 'absolute')
+          .style('padding', '5px 10px')
+          .style('background-color', '#000000')
+          .style('border-radius', '8px')
+          .style('color', '#ffffff')
+          .style('visibility', 'hidden')
+          .style('pointer-events', 'none');
 
         const defs = svg.append('defs');
 
@@ -244,6 +245,8 @@
           .enter()
           .append('g')
           .each(function (row) {
+            if (row.depth === 1) selectedSet.add(row.name);
+
             const circle = d3.select(this)
               .append('circle')
               .attr('r', row.size)
@@ -290,6 +293,18 @@
                   selectedSet.add(row.name);
                 }
               });
+
+            if (row.postCount !== undefined) {
+              d3.select(this)
+                .on('mouseover', () => tooltip.style('visibility', 'visible'))
+                .on('mouseout', () => tooltip.style('visibility', 'hidden'))
+                .on('mousemove', () => {
+                  tooltip
+                    .text(row.postCount)
+                    .style('top', (event.clientY - tooltip.node().offsetHeight) - 7 + 'px')
+                    .style('left', (event.clientX - tooltip.node().offsetWidth / 2) + 'px')
+                })
+            }
           }).call(networkGraph.drag(simulation));
         
         simulation.on('tick', () => {
