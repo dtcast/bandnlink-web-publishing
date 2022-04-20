@@ -170,6 +170,8 @@
 		const networkGraph = {
       createGrapth: () => {
         const nodes = data.map(row => {
+          if (row.depth === 1) selectedSet.add(row.name);
+
           return Object.create({
             id: row.id,
             name: row.name,
@@ -248,7 +250,8 @@
               .append('circle')
               .attr('r', row.size)
               .attr('fill', row.depth === 1 ? '#3182F6' : '#4C5864')
-              .style('filter', 'url(#drop-shadow)');
+              .style('filter', 'url(#drop-shadow)')
+              .style('cursor', 'pointer');
 
             const text = d3.select(this)
               .append('text');
@@ -281,13 +284,11 @@
             
             d3.select(this)
               .on('click', () => {
-                if (row.depth === 1) return;
-
                 if (selectedSet.has(row.name)) {
                   circle.attr('fill', '#4C5864');
                   selectedSet.delete(row.name);
                 } else {
-                  circle.attr('fill', '#09CC7A');
+                  circle.attr('fill', row.depth === 1 ? '#3182F6' : '#09CC7A');
                   selectedSet.add(row.name);
                 }
               });
