@@ -310,12 +310,13 @@
                 .attr('dy', -7)
                 .attr('fill', '#ffffff')
                 .style('text-anchor', 'middle')
+                .style('opacity', 0);
               
               const tooltipWidth = textBBox.width + 15;
               const tooltipHeight = textBBox.height + 5;
 
               tooltip
-                .style('display', 'none')
+                .style('opacity', 0)
                 .attr('width', tooltipWidth)
                 .attr('height', tooltipHeight)
                 .attr('x', -(tooltipWidth / 2))
@@ -325,19 +326,13 @@
               
               d3.select(this)
                 .on('mouseover', () => {
-                  tooltip.style('display', 'block');
-
+                  tooltip.transition().duration(200).style('opacity', 1);
+                  text.transition().duration(200).style('opacity', 1);
                 })
-                .on('mouseout', () => tooltip.style('display', 'none'))
-              // d3.select(this)
-              //   .on('mouseover', () => tooltip.style('visibility', 'visible'))
-              //   .on('mouseout', () => tooltip.style('visibility', 'hidden'))
-              //   .on('mousemove', () => {
-              //     tooltip
-              //       .text(row.postCount)
-              //       .style('top', (event.pageY - tooltip.node().clientHeight) - 7 + 'px')
-              //       .style('left', (event.pageX - tooltip.node().clientWidth / 2) + 'px')
-              //   })
+                .on('mouseout', () => {
+                  tooltip.transition().duration(300).style('opacity', 0);
+                  text.transition().duration(300).style('opacity', 0);
+                });
             }
           }).call(networkGraph.drag(simulation));
         
