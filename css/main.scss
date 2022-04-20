@@ -6,7 +6,7 @@ body {
     "Malgun Gothic", sans-serif;
 }
 
-@import "reset.css";
+@import "reset.scss";
 
 @import "theme/color.scss";
 @import "theme/components.scss";
@@ -19,3 +19,5 @@ body {
 @import "page/campaigns.scss";
 @import "page/insight.scss";
 @import "page/cs.scss";
+
+@import "mobile.scss";

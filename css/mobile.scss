@@ -14,6 +14,7 @@
     display: block;
     padding: 40px 0;
     width: 100%;
+		min-height: auto;
     overflow: hidden;
 
     aside {
@@ -53,6 +54,10 @@
       }
     }
   }
+
+	.insight-page, .insight2-page {
+		flex-flow: column !important;
+	}
 
   .cs-page {
     .contents-container {
@@ -193,3 +198,4 @@
     padding: 5%;
   }
 }
+

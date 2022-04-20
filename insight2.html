@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Band&Cast</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- import CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  </head>
+  <body>
+    <header class="border">
+      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+      <ul class="menus">
+        <li>
+          <a href="./campaign.html">캠페인</a>
+        </li>
+        <li>
+          <a href="./insight.html">#인사이트</a>
+        </li>
+        <li>
+          <a href="./cs_notice_list.html">고객센터</a>
+        </li>
+        <li>
+          <a href="./login.html">로그인</a>
+        </li>
+      </ul>
+    </header>
+    <main class="page insight2-page">
+			<aside>
+				<h2 class="desktop-only">#인사이트</h2>
+				<ul class="side-nav">
+					<li>
+						<a href="./insight.html">분석하기</a>
+					</li>
+					<li class="active">
+						<a href="./insight2.html">분석 보고서</a>
+					</li>
+				</ul>
+			</aside>
+      <div class="contents-container">
+        <table class="table border-table desktop-only">
+          <thead>
+            <tr>
+							<th style="width: 80px">번호</th>
+              <th>검색어</th>
+							<th>선택된 해시태그</th>
+              <th class="text-left" style="width: 160px;">상태</th>
+							<th class="text-left" style="width: 160px;">최종 업데이트</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+							<td>3</td>
+							<td>맛집+분위기</td>
+							<td>
+								<span class="badge">#맛집</span>
+								<span class="badge">#분위기</span>
+								<span class="badge">#가나다</span>
+								<span class="badge">#라마바</span>
+							</td>
+							<td style="text-align: left;">
+								<i class="ico ico-pending"></i>
+								분석중
+							</td>
+							<td class="text-left">2022-12-30 30:00</td>
+							<td>
+								<button class="btn btn-primary btn-small">보기</button>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>맛집+분위기</td>
+							<td>
+								<span class="badge">#맛집</span>
+								<span class="badge">#분위기</span>
+								<span class="badge">#가나다</span>
+							</td>
+							<td style="text-align: left;">
+								<i class="ico ico-complete"></i>
+								분석 완료
+							</td>
+							<td class="text-left">2022-12-30 30:00</td>
+							<td>
+								<button class="btn btn-primary btn-small">보기</button>
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>맛집+분위기</td>
+							<td>
+								<span class="badge">#맛집</span>
+								<span class="badge">#분위기</span>
+								<span class="badge">#가나다</span>
+							</td>
+							<td style="text-align: left;">
+								<i class="ico ico-error"></i>
+								분석 실패
+							</td>
+							<td class="text-left">2022-12-30 30:00</td>
+							<td>
+								<button class="btn btn-primary btn-small">보기</button>
+							</td>
+						</tr>
+          </tbody>
+        </table>
+				<div class="loading-spinner"></div>
+        <script>
+          $(".loading-spinner").html(
+            '<svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>'
+          );
+        </script>
+    </main>
+    <footer>
+      <div class="container">
+        <p class="logo">Band<span>&</span>Cast</p>
+        <p class="item mt-20">
+          <span>대표자 : 홍길동</span>
+          <span>주소 : 서울특별시 강남구 역삼동</span>
+        </p>
+        <p class="item">
+          <span>이메일 : abc@abc.com</span>
+          <span>사업자등록번호 : 123-123-1234</span>
+          <span>등록일 : 2023. 01. 01 </span>
+        </p>
+        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
