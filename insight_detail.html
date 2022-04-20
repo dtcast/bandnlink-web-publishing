@@ -214,16 +214,6 @@
           .join('line')
           .attr('stroke-width', 2)
           .attr('stroke-dasharray', 2.67372);
-        
-        const tooltip = d3.select('#chart')
-          .append('div')
-          .style('position', 'absolute')
-          .style('padding', '5px 10px')
-          .style('background-color', '#000000')
-          .style('border-radius', '8px')
-          .style('color', '#ffffff')
-          .style('visibility', 'hidden')
-          .style('pointer-events', 'none');
 
         const defs = svg.append('defs');
 
@@ -306,15 +296,48 @@
               });
 
             if (row.postCount !== undefined) {
+              const tooltip = d3.select(this)
+                .append('rect');
+              const text = d3.select(this)
+                .append('text')
+                .text(row.postCount);
+              
+              const textBBox = text.node().getBBox()
+
+              text
+                .attr('x', 0)
+                .attr('y', -row.size)
+                .attr('dy', -7)
+                .attr('fill', '#ffffff')
+                .style('text-anchor', 'middle')
+              
+              const tooltipWidth = textBBox.width + 15;
+              const tooltipHeight = textBBox.height + 5;
+
+              tooltip
+                .style('display', 'none')
+                .attr('width', tooltipWidth)
+                .attr('height', tooltipHeight)
+                .attr('x', -(tooltipWidth / 2))
+                .attr('y', Number(text.attr('y')) - tooltipHeight)
+                .attr('rx', 8)
+                .attr('ry', 8);
+              
               d3.select(this)
-                .on('mouseover', () => tooltip.style('visibility', 'visible'))
-                .on('mouseout', () => tooltip.style('visibility', 'hidden'))
-                .on('mousemove', () => {
-                  tooltip
-                    .text(row.postCount)
-                    .style('top', (event.clientY - tooltip.node().clientHeight) - 7 + 'px')
-                    .style('left', (event.clientX - tooltip.node().clientWidth / 2) + 'px')
+                .on('mouseover', () => {
+                  tooltip.style('display', 'block');
+
                 })
+                .on('mouseout', () => tooltip.style('display', 'none'))
+              // d3.select(this)
+              //   .on('mouseover', () => tooltip.style('visibility', 'visible'))
+              //   .on('mouseout', () => tooltip.style('visibility', 'hidden'))
+              //   .on('mousemove', () => {
+              //     tooltip
+              //       .text(row.postCount)
+              //       .style('top', (event.pageY - tooltip.node().clientHeight) - 7 + 'px')
+              //       .style('left', (event.pageX - tooltip.node().clientWidth / 2) + 'px')
+              //   })
             }
           }).call(networkGraph.drag(simulation));
         
