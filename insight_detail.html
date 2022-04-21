@@ -445,7 +445,10 @@
             }
           }).call(networkGraph.drag(simulation));
 
-        const zoomHandler = d3.zoom().on('zoom', () => gHolder.attr('transform', d3.event.transform));
+        const zoomHandler = d3.zoom()
+          .scaleExtent([0.5, 3])
+          .translateExtent([[-width, -height], [width * 2, height * 2]])
+          .on('zoom', () => gHolder.attr('transform', d3.event.transform));
 
         zoomHandler(svg);
         
