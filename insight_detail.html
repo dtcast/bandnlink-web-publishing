@@ -48,6 +48,9 @@
         <p class="title">맛집 + 분위기</p>
         <div id="chart">
           <svg></svg>
+          <div class="loading-spinner">
+            <svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
+          </div>
         </div>
       </div>
       <div>
@@ -78,6 +81,7 @@
   </body>
   <style>
     #chart {
+      position: relative;
       width: 800px;
     }
   </style>
@@ -167,14 +171,7 @@
 
 		const networkGraph = {
       createGrapth: () => {
-        const nodes = data.map(row => {
-          return Object.create({
-            id: row.id,
-            name: row.name,
-            size: row.size,
-            depth: row.depth,
-          });
-        });
+        const nodes = data.map(Object.create);
 
         const links = data.filter(row => {
           return row.parentIds !== undefined;
@@ -195,9 +192,16 @@
           .force('charge', d3.forceManyBody().strength(-100))
           .force('center', d3.forceCenter(width / 2, height / 2))
           .force('collide', d3.forceCollide().radius(row => row.size * 1.3));
-        
+
         const svg = d3.select('#chart > svg')
-          .attr('viewBox', [0, 0, width, height]);
+          .attr('viewBox', [0, 0, width, height])
+          .style('visibility', 'hidden');
+        
+        setTimeout(() => {
+          svg.style('visibility', 'visible');
+          d3.select('#chart > .loading-spinner')
+            .style('display', 'none');
+        }, 2000);
         
         const gHolder = svg.append('g')
           .attr('class', 'g-holder');
@@ -242,11 +246,14 @@
           .enter()
           .append('g')
           .each(function (row) {
+            if (row.depth === 1) selectedSet.add(row.name);
+
             const circle = d3.select(this)
               .append('circle')
               .attr('r', row.size)
               .attr('fill', row.depth === 1 ? '#3182F6' : '#4C5864')
-              .style('filter', 'url(#drop-shadow)');
+              .style('filter', 'url(#drop-shadow)')
+              .style('cursor', 'pointer');
 
             const text = d3.select(this)
               .append('text');
@@ -279,16 +286,54 @@
             
             d3.select(this)
               .on('click', () => {
-                if (row.depth === 1) return;
-
                 if (selectedSet.has(row.name)) {
                   circle.attr('fill', '#4C5864');
                   selectedSet.delete(row.name);
                 } else {
-                  circle.attr('fill', '#09CC7A');
+                  circle.attr('fill', row.depth === 1 ? '#3182F6' : '#09CC7A');
                   selectedSet.add(row.name);
                 }
               });
+
+            if (row.postCount !== undefined) {
+              const tooltip = d3.select(this)
+                .append('rect');
+              const text = d3.select(this)
+                .append('text')
+                .text(row.postCount);
+              
+              const textBBox = text.node().getBBox()
+
+              text
+                .attr('x', 0)
+                .attr('y', -row.size)
+                .attr('dy', -7)
+                .attr('fill', '#ffffff')
+                .style('text-anchor', 'middle')
+                .style('opacity', 0);
+              
+              const tooltipWidth = textBBox.width + 15;
+              const tooltipHeight = textBBox.height + 5;
+
+              tooltip
+                .style('opacity', 0)
+                .attr('width', tooltipWidth)
+                .attr('height', tooltipHeight)
+                .attr('x', -(tooltipWidth / 2))
+                .attr('y', Number(text.attr('y')) - tooltipHeight)
+                .attr('rx', 8)
+                .attr('ry', 8);
+              
+              d3.select(this)
+                .on('mouseover', () => {
+                  tooltip.transition().duration(200).style('opacity', 1);
+                  text.transition().duration(200).style('opacity', 1);
+                })
+                .on('mouseout', () => {
+                  tooltip.transition().duration(300).style('opacity', 0);
+                  text.transition().duration(300).style('opacity', 0);
+                });
+            }
           }).call(networkGraph.drag(simulation));
         
         simulation.on('tick', () => {
