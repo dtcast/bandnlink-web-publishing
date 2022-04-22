@@ -441,6 +441,10 @@
           .on('zoom', () => gHolder.attr('transform', d3.event.transform));
 
         zoomHandler(svg);
+
+        if (document.querySelector('#chart').clientHeight === 500) {
+          gHolder.attr('transform', 'scale(0.5)');
+        }
         
         simulation.on('tick', () => {
           link.attr('x1', row => row.source.x)
