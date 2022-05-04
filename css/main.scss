@@ -20,53 +20,83 @@ body {
 @import "page/insight.scss";
 @import "page/cs.scss";
 
-@import "mobile.scss";
+.popup-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.section3 {
-	background: $color-flat-white;
-	// background: red;
+  .popup {
+    position: relative;
+    margin: 0 auto;
+    padding: 33px 35px;
+    background: white;
+    border-radius: 10px;
+    max-width: 840px;
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
 
-  ul.brands {
-    li {
+    .popup-title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    .popup-body {
+      margin-top: 30px;
+
+      .table {
+        margin-bottom: 20px;
+        
+        td:first-of-type {
+    
+          .thumb {
+            float: left;
+            width: 32px;
+            height: 32px;
+            background: $color-text-regular;
+            border-radius: 8px;
+          }
+  
+          .nickname {
+            float: left;
+            margin-left: 10px;
+            line-height: 32px;
+          }
+        }
+      }
+    }
+
+    .popup-close {
+      top: 30px;
+      right: 26px;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: none;
+      outline: none;
+      background: url(../img/i_popup_close.svg) center no-repeat;
+      cursor: pointer;
+    }
+
+    .badge {
       display: inline-block;
-      margin: 10px;
-      width: 100px;
-      height: 60px;
-      border-radius: 3px;
-      background: rgba(0, 0, 0, 0.08);
-			opacity: 0;
+      margin: 4px;
+      background: $color-text-regular;
+      color: white;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
-
-  .subtitle {
-    margin: 40px auto 0;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-  }
-
-  .title {
-    margin: 20px auto 0;
-    font-size: 32px;
-    font-weight: 500;
-    color: #333;
-    text-align: center;
-		font-weight: 500;
-
-		span {
-			font-weight: 400;
-		}
-  }
-
-  button {
-		display: block;
-    margin: 50px auto 0;
-		font-weight: 500;
-    font-size: 22px;
-    padding: 13px 100px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-		cursor: pointer;
-  }
 }
+
+@import "mobile.scss";

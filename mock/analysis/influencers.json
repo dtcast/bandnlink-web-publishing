@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nickname": "agent_x",
+    "follower_count": 200000,
+    "last_month_post_count": 17,
+    "avg_like_count": 106,
+    "avg_comment_count": 35,
+    "score": 8.7,
+    "hashtags": ["맛스타그램", "자취요리"]
+  },
+  {
+    "id": 2,
+    "nickname": "agent_x",
+    "follower_count": 200000,
+    "last_month_post_count": 17,
+    "avg_like_count": 106,
+    "avg_comment_count": 35,
+    "score": 8.7,
+    "hashtags": ["맛스타그램", "자취요리"]
+  },
+  {
+    "id": 3,
+    "nickname": "agent_x",
+    "follower_count": 200000,
+    "last_month_post_count": 17,
+    "avg_like_count": 106,
+    "avg_comment_count": 35,
+    "score": 8.7,
+    "hashtags": ["맛스타그램", "자취요리"]
+  }
+]

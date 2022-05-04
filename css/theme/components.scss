@@ -182,6 +182,7 @@
   font-size: 14px;
   line-height: 1;
   border-radius: 6px;
+  white-space: nowrap;;
 
   &.badge-gray {
     background: $color-text-regular;
@@ -320,66 +321,7 @@
   }
 }
 
-.popup-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 99;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  .popup {
-    position: relative;
-    padding: 33px 35px;
-    background: white;
-    border-radius: 10px;
-    min-width: 840px;
-
-    .popup-title {
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 22px;
-    }
-
-    .popup-body {
-      margin-top: 30px;
-
-      .thumb {
-        width: 32px;
-        height: 32px;
-        background: $color-text-regular;
-        border-radius: 8px;
-      }
-    }
-
-    .popup-close {
-      top: 30px;
-      right: 26px;
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      border: none;
-      outline: none;
-      background: url(../img/i_popup_close.svg) center no-repeat;
-      cursor: pointer;
-    }
-
-    .badge {
-      display: block;
-      margin-bottom: 4px;
-      background: $color-text-regular;
-      color: white;
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
 
 @keyframes loading-rotate {
   to {

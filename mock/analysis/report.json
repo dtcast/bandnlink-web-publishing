@@ -1,0 +1,87 @@
+{
+  "id": 1,
+  "search_keywords": ["맛집", "분위기"],
+  "hashtag_infos": [
+    {
+      "id": 1,
+      "name": "맛집",
+      "size": 80,
+      "depth": 1,
+      "postCount": 10
+    },
+    {
+      "id": 2,
+      "name": "분위기",
+      "size": 80,
+      "depth": 1,
+      "postCount": 10
+    },
+    {
+      "id": 3,
+      "name": "인테리어",
+      "size": 60,
+      "parentIds": [1, 2],
+      "depth": 2,
+      "postCount": 10
+    },
+    {
+      "id": 4,
+      "name": "데이트",
+      "size": 60,
+      "parentIds": [1, 2],
+      "postCount": 10
+    },
+    {
+      "id": 5,
+      "name": "디저트",
+      "size": 50,
+      "parentIds": [1, 2],
+      "depth": 2
+    },
+    {
+      "id": 6,
+      "name": "카페",
+      "size": 40,
+      "parentIds": [4],
+      "depth": 2
+    },
+    {
+      "id": 7,
+      "name": "압구정",
+      "size": 40,
+      "parentIds": [4],
+      "depth": 2
+    },
+    {
+      "id": 8,
+      "name": "파스타",
+      "size": 40,
+      "parentIds": [4],
+      "depth": 3
+    },
+    {
+      "id": 9,
+      "name": "로데오 거리",
+      "size": 30,
+      "parentIds": [7],
+      "depth": 4
+    },
+    {
+      "id": 10,
+      "name": "신사동",
+      "size": 30,
+      "parentIds": [7],
+      "depth": 4
+    },
+    {
+      "id": 11,
+      "name": "현대 백화점",
+      "size": 30,
+      "parentIds": [7],
+      "depth": 4
+    }
+  ],
+  "status": "인플루언서 검색 완료",
+  "created_at": "2022-07-30 14:17",
+  "updated_at": "2022-07-01 14:20"
+}

@@ -1,145 +1,269 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Band&Cast</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-    />
-    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-      crossorigin="anonymous"
-    ></script>
-    <!-- import CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-    />
-    <!-- import JavaScript -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  </head>
-  <body>
-    <header class="border">
-      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
-      <ul class="menus">
+
+<head>
+  <title>Band&Cast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+</head>
+
+<body>
+  <header class="border">
+    <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+    <ul class="menus">
+      <li>
+        <a href="./campaign.html">캠페인</a>
+      </li>
+      <li>
+        <a href="./insight.html">#인사이트</a>
+      </li>
+      <li>
+        <a href="./cs_notice_list.html">고객센터</a>
+      </li>
+      <li>
+        <a href="./login.html">로그인</a>
+      </li>
+    </ul>
+  </header>
+  <main class="page insight2-page">
+    <aside>
+      <h2 class="desktop-only">#인사이트</h2>
+      <ul class="side-nav">
         <li>
-          <a href="./campaign.html">캠페인</a>
+          <a href="./insight.html">분석 요청</a>
         </li>
-        <li>
-          <a href="./insight.html">#인사이트</a>
-        </li>
-        <li>
-          <a href="./cs_notice_list.html">고객센터</a>
-        </li>
-        <li>
-          <a href="./login.html">로그인</a>
+        <li class="active">
+          <a href="./insight2.html">분석 결과</a>
         </li>
       </ul>
-    </header>
-    <main class="page insight2-page">
-			<aside>
-				<h2 class="desktop-only">#인사이트</h2>
-				<ul class="side-nav">
-					<li>
-						<a href="./insight.html">분석하기</a>
-					</li>
-					<li class="active">
-						<a href="./insight2.html">분석 보고서</a>
-					</li>
-				</ul>
-			</aside>
-      <div class="contents-container">
-        <table class="table border-table desktop-only">
-          <thead>
-            <tr>
-							<th style="width: 80px">번호</th>
-              <th>검색어</th>
-							<th>선택된 해시태그</th>
-              <th class="text-left" style="width: 160px;">상태</th>
-							<th class="text-left" style="width: 160px;">최종 업데이트</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-							<td>3</td>
-							<td>맛집+분위기</td>
-							<td>
-								<span class="badge">#맛집</span>
-								<span class="badge">#분위기</span>
-								<span class="badge">#가나다</span>
-								<span class="badge">#라마바</span>
-							</td>
-							<td style="text-align: left;">
-								<i class="ico ico-pending"></i>
-								분석중
-							</td>
-							<td class="text-left">2022-12-30 30:00</td>
-							<td>
-								<button class="btn btn-primary btn-small">보기</button>
-							</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>맛집+분위기</td>
-							<td>
-								<span class="badge">#맛집</span>
-								<span class="badge">#분위기</span>
-								<span class="badge">#가나다</span>
-							</td>
-							<td style="text-align: left;">
-								<i class="ico ico-complete"></i>
-								분석 완료
-							</td>
-							<td class="text-left">2022-12-30 30:00</td>
-							<td>
-								<button class="btn btn-primary btn-small">보기</button>
-							</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>맛집+분위기</td>
-							<td>
-								<span class="badge">#맛집</span>
-								<span class="badge">#분위기</span>
-								<span class="badge">#가나다</span>
-							</td>
-							<td style="text-align: left;">
-								<i class="ico ico-error"></i>
-								분석 실패
-							</td>
-							<td class="text-left">2022-12-30 30:00</td>
-							<td>
-								<button class="btn btn-primary btn-small">보기</button>
-							</td>
-						</tr>
-          </tbody>
-        </table>
-				<div class="loading-spinner"></div>
-        <script>
-          $(".loading-spinner").html(
-            '<svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>'
-          );
-        </script>
-    </main>
-    <footer>
-      <div class="container">
-        <p class="logo">Band<span>&</span>Cast</p>
-        <p class="item mt-20">
-          <span>대표자 : 홍길동</span>
-          <span>주소 : 서울특별시 강남구 역삼동</span>
-        </p>
-        <p class="item">
-          <span>이메일 : abc@abc.com</span>
-          <span>사업자등록번호 : 123-123-1234</span>
-          <span>등록일 : 2023. 01. 01 </span>
-        </p>
-        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+    </aside>
+    <div class="contents-container">
+      <table class="table border-table" id="requests-table">
+        <thead>
+          <tr>
+            <th style="width: 80px">번호</th>
+            <th style="width:200px">검색어</th>
+            <th>선택된 해시태그</th>
+            <th class="text-left" style="width: 160px;">상태</th>
+            <th class="text-left" style="width: 160px;">최종 업데이트</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="6" style="height: 100px">
+              <div class="loading-spinner"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="pagination" style="display: none">
+        <li><i class="el-icon-arrow-left"></i></li>
+        <li class="active">1</li>
+        <li><i class="el-icon-arrow-right"></i></li>
+      </ul>
+      <div class="popup-wrap" id="result-popup-wrap" style="display: none;">
+        <div class="popup">
+          <button class="popup-close" onclick="popup.hide()"></button>
+          <div class="popup-title">추천 인플루언서</div>
+          <div class="popup-body">
+            <table class="table" id="influencer-table">
+              <thead>
+                <tr>
+                  <th class="text-left">이름</th>
+                  <th>팔로워 수</th>
+                  <th>최근 한 달 게시물</th>
+                  <th>평균 좋아요 수</th>
+                  <th>평균 댓글 수</th>
+                  <th>iLab Score</th>
+                  <th>주요 해시태그</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                  <td>
+                    <div class="thumb"></div>
+                    <div class="nickname">agent_x</div>
+                  </td>
+                  <td>
+                    20k
+                  </td>
+                  <td>17</td>
+                  <td>106</td>
+                  <td>35</td>
+                  <td>8.7</td>
+                  <td>
+                    <span class="badge">#맛스타그램</span>
+                    <span class="badge">#자취요리</span>
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-download" onclick="popup.download()">다운로드</button>
+          </div>
+        </div>
       </div>
-    </footer>
-  </body>
+  </main>
+  <footer>
+    <div class="container">
+      <p class="logo">Band<span>&</span>Cast</p>
+      <p class="item mt-20">
+        <span>대표자 : 홍길동</span>
+        <span>주소 : 서울특별시 강남구 역삼동</span>
+      </p>
+      <p class="item">
+        <span>이메일 : abc@abc.com</span>
+        <span>사업자등록번호 : 123-123-1234</span>
+        <span>등록일 : 2023. 01. 01 </span>
+      </p>
+      <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+    const popupEl = document.querySelector('#result-popup-wrap')
+    const loadingSpinnerEl = document.querySelector('#requests-table .loading-spinner');
+    const paginationEl = document.querySelector('.pagination');
+
+    var page = {
+      init: function () {
+        loadingSpinnerEl.innerHTML = '<svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>';
+        setTimeout(() => {
+          page.fetchList();
+        }, 800);
+      },
+      fetchList: function () {
+        fetch('/mock/analysis/requests.json').then((response) => response.json())
+          .then((data) => {
+            const list = data.list || []
+            page.renderList(list);
+
+            if (data['total_count'] > 0) {
+              paginationEl.style.display = 'flex';
+            }
+          });
+      },
+      renderList: function (list) {
+        let html = ''
+        for (const item of list) {
+          const itemId = item['id'];
+          const searchKeyword = item['search_keywords'];
+          const hashtags = item['hashtags'];
+          const status = item['status'];
+          const updatedAt = item['updated_at'];
+
+          html += '<tr>';
+          html += '<td>' + itemId + '</td>';
+          html += '<td>' + searchKeyword.join('+') + '</td>';
+          html += '<td class="text-left" style="white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis">'
+          const hashtagCount = hashtags.length;
+          for (let i = 0; i < hashtagCount; i++) {
+            html += '<span class="badge">#' + hashtags[i] + '</span>';
+
+            if (i > 1) {
+              html += '<span style="position:absolute;top:11px;margin-left:3px;color:#409eff">..</span>'
+              break;
+            }
+          }
+          html += '</td>'
+
+          const itemStatusMap = {
+            '연관 해시태그 분석중': 'pending',
+            '연관 해시태그 분석 완료': 'complete',
+            '인플루언서 검색중': 'error',
+            '인플루언서 검색 완료': 'complete',
+          }
+          html += '<td class="text-left"><i class="ico ico-' + itemStatusMap[status] + '"></i>' + status + '</td>';
+          html += '<td class="text-left">' + updatedAt + '</td>';
+
+          html += '<td>';
+          if (status == '인플루언서 검색 완료') {
+            html += '<button class="btn btn-primary btn-small" onclick="location.href=\'/insight_detail.html?id=' + itemId + '\'">검색</button></td>';
+          }
+          else if (status == '연관 해시태그 분석 완료') {
+            html += '<button class="btn btn-info btn-small" onclick="popup.show(' + itemId + ')">보기</button></td>';
+          }
+          html += '</td>';
+          html += '</tr>'
+        }
+
+        if (!list || list.length == 0) {
+          html = '<tr><td colspan="6" style="height:100px">분석 요청한 데이터가 없습니다</td></tr>';
+        }
+        document.querySelector('#requests-table > tbody').innerHTML = html;
+      },
+    }
+    page.init();
+
+    var popup = {
+      data: {
+        id: undefined,
+      },
+      clear: function () {
+        popup.data.id = undefined;
+      },
+      download: function () {
+        alert(popup.data.id + ': 다운로드 요청')
+      },
+      fetchList: function (id) {
+        fetch('/mock/analysis/influencers.json').then((response) => response.json())
+          .then((data) => {
+            const list = data || []
+            popup.renderList(list);
+          });
+      },
+      renderList: function (list) {
+        let html = ''
+        for (const item of list) {
+          const itemId = item['id'];
+          const nickname = item['nickname'];
+          const followerCount = item['follower_count'];
+          const lastMonthPostCount = item['last_month_post_count'];
+          const avgLikeCount = item['avg_like_count'];
+          const avgCommentCount = item['avg_comment_count'];
+          const score = item['score'];
+          const hashtags = item['hashtags'];
+
+          html += '<tr>';
+          html += '<td><div class="thumb"></div><span class="nickname">' + nickname + '</span></td>';
+          html += '<td>' + followerCount + '</td>';
+          html += '<td>' + lastMonthPostCount + '</td>';
+          html += '<td>' + avgLikeCount + '</td>';
+          html += '<td>' + avgCommentCount + '</td>';
+          html += '<td>' + score + '</td>';
+          html += '<td>';
+          for (const hashtag of hashtags) {
+            html += '<span class="badge">' + hashtag + '</span>';
+          }
+          html += '</td>';
+          html += '</tr>';
+        }
+
+        if (!list || list.length == 0) {
+          html = '<tr><td colspan="6" style="height:100px">분석 요청한 데이터가 없습니다</td></tr>';
+        }
+        document.querySelector('#influencer-table > tbody').innerHTML = html;
+      },
+
+      show: function (id) {
+        popup.data.id = id;
+        this.fetchList()
+        document.querySelector('body').style.overflow = 'hidden';
+        popupEl.style.display = 'flex';
+      },
+      hide: function () {
+        document.querySelector('body').style.overflow = 'auto';
+        popupEl.style.display = 'none';
+        popup.clear();
+      }
+    }
+    popup.show();
+  </script>
+</body>
+
 </html>

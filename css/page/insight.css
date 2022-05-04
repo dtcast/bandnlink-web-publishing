@@ -68,8 +68,10 @@
   border: 2px solid #e9eaec;
   background: white;
   padding: 10px 20px;
-  width: 90%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 420px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .insight-page .input-wrap input {
@@ -240,17 +242,18 @@
           flex-flow: row;
 }
 
-.insight2-page .table .badge {
+.insight2-page #requests-table .badge {
+  margin: 0 4px;
   background: #ecf5ff;
   color: #409eff;
   font-weight: 400;
 }
 
-.insight2-page .table td {
+.insight2-page #requests-table td {
   position: relative;
 }
 
-.insight2-page .table i.ico {
+.insight2-page #requests-table i.ico {
   position: absolute;
   top: 50%;
   display: inline-block;
@@ -261,15 +264,15 @@
           transform: translate(-12px, -3px);
 }
 
-.insight2-page .table i.ico.ico-error {
+.insight2-page #requests-table i.ico.ico-error {
   background: #f56c6c;
 }
 
-.insight2-page .table i.ico.ico-pending {
+.insight2-page #requests-table i.ico.ico-pending {
   background: #fcdadb;
 }
 
-.insight2-page .table i.ico.ico-complete {
+.insight2-page #requests-table i.ico.ico-complete {
   background: #67c23a;
 }
 /*# sourceMappingURL=insight.css.map */

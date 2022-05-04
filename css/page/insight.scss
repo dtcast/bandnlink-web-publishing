@@ -23,8 +23,9 @@
     border: 2px solid $color-border;
     background: white;
     padding: 10px 20px;
-    width: 90%;
-		max-width: 300px;
+    width: 100%;
+		max-width: 420px;
+    box-sizing: border-box;
 
     input {
       display: block;
@@ -165,8 +166,9 @@
   display: flex;
   flex-flow: row;
 
-  .table {
+  #requests-table {
     .badge {
+      margin: 0 4px;
       background: #ecf5ff;
       color: $color-primary-light;
       font-weight: 400;

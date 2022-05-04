@@ -191,4 +191,50 @@
   opacity: 1;
   z-index: 9;
 }
+
+.intro-page .section3 {
+  background: #f5f7fa;
+}
+
+.intro-page .section3 ul.brands li {
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+  height: 60px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.08);
+  opacity: 0;
+}
+
+.intro-page .section3 .subtitle {
+  margin: 40px auto 0;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.intro-page .section3 .title {
+  margin: 20px auto 0;
+  font-size: 32px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+}
+
+.intro-page .section3 .title span {
+  font-weight: 400;
+}
+
+.intro-page .section3 button {
+  display: block;
+  margin: 50px auto 0;
+  font-weight: 500;
+  font-size: 22px;
+  padding: 13px 100px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=intro.css.map */
