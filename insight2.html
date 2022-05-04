@@ -138,7 +138,7 @@
         }, 800);
       },
       fetchList: function () {
-        fetch('/mock/analysis/requests.json').then((response) => response.json())
+        fetch('./mock/analysis/requests.json').then((response) => response.json())
           .then((data) => {
             const list = data.list || []
             page.renderList(list);
@@ -211,7 +211,7 @@
         alert(popup.data.id + ': 다운로드 요청')
       },
       fetchList: function (id) {
-        fetch('/mock/analysis/influencers.json').then((response) => response.json())
+        fetch('./mock/analysis/influencers.json').then((response) => response.json())
           .then((data) => {
             const list = data || []
             popup.renderList(list);
