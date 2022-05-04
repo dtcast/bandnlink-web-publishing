@@ -213,7 +213,8 @@
 }
 
 .insight-detail-page > div:nth-of-type(2) .box .btns > li {
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   padding: 0 10px;
   height: 36px;
   line-height: 36px;

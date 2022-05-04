@@ -79,14 +79,21 @@
       </div>
     </footer>
   </body>
-  <style>
-    #chart {
-      position: relative;
-      width: 800px;
-    }
-  </style>
   <script>
     let selectedSet = new Set();
+
+    function refresh() {
+      document.querySelector('.box > .btns').innerHTML = '';
+      selectedSet.forEach(name => {
+        const btn = document.createElement('li');
+        btn.textContent = '#' + name;
+        if (!['맛집', '분위기'].includes(name)) {
+          btn.style.backgroundColor = '#09CC7A';
+        }
+
+        document.querySelector('.box > .btns').appendChild(btn);
+      })
+    }
 
     const data = [
       {
@@ -166,7 +173,98 @@
         "size": 30,
         "parentIds": [7],
         "depth": 4
-      }
+      },
+      {
+        "id": 12,
+        "name": "프로포즈",
+        "size": 60,
+        "parentIds": [2],
+        "depth": 2
+      },
+      {
+        "id": 13,
+        "name": "레스토랑",
+        "size": 40,
+        "parentIds": [12],
+        "depth": 3
+      },
+      {
+        "id": 14,
+        "name": "무인도",
+        "size": 40,
+        "parentIds": [12],
+        "depth": 3
+      },
+      {
+        "id": 15,
+        "name": "요트",
+        "size": 40,
+        "parentIds": [12],
+        "depth": 3
+      },
+      {
+        "id": 16,
+        "name": "시그니엘 호텔",
+        "size": 40,
+        "parentIds": [12],
+        "depth": 3
+      },
+      {
+        "id": 17,
+        "name": "방송 출연",
+        "size": 40,
+        "parentIds": [1],
+        "depth": 2
+      },
+      {
+        "id": 18,
+        "name": "백종원 추천",
+        "size": 30,
+        "parentIds": [17],
+        "depth": 3
+      },
+      {
+        "id": 19,
+        "name": "인도 커리",
+        "size": 30,
+        "parentIds": [17],
+        "depth": 3
+      },
+      {
+        "id": 20,
+        "name": "한식",
+        "size": 30,
+        "parentIds": [17],
+        "depth": 3
+      },
+      {
+        "id": 21,
+        "name": "모던",
+        "size": 40,
+        "parentIds": [3],
+        "depth": 3
+      },
+      {
+        "id": 22,
+        "name": "북유럽",
+        "size": 40,
+        "parentIds": [3],
+        "depth": 3
+      },
+      {
+        "id": 23,
+        "name": "클래식",
+        "size": 40,
+        "parentIds": [3],
+        "depth": 3
+      },
+      {
+        "id": 24,
+        "name": "빈티지",
+        "size": 40,
+        "parentIds": [3],
+        "depth": 3
+      },
     ];
 
 		const networkGraph = {
@@ -194,7 +292,6 @@
           .force('collide', d3.forceCollide().radius(row => row.size * 1.3));
 
         const svg = d3.select('#chart > svg')
-          .attr('viewBox', [0, 0, width, height])
           .style('visibility', 'hidden');
         
         setTimeout(() => {
@@ -247,6 +344,7 @@
           .append('g')
           .each(function (row) {
             if (row.depth === 1) selectedSet.add(row.name);
+            refresh();
 
             const circle = d3.select(this)
               .append('circle')
@@ -267,7 +365,7 @@
                 text.append('tspan')
                 .attr('x', 0)
                 .attr('y', 0)
-                .attr('dy', (++lineNumber * 14) - (words.length * 8)).text(word)
+                .attr('dy', (++lineNumber * 16) - (words.length * 8)).text(word)
                 .style('text-anchor', 'middle')
                 .style('font-size', ['20px', '16px', '14px', '12px'][row.depth - 1])
                 .style('font-weight', '700')
@@ -293,6 +391,7 @@
                   circle.attr('fill', row.depth === 1 ? '#3182F6' : '#09CC7A');
                   selectedSet.add(row.name);
                 }
+                refresh();
               });
 
             if (row.postCount !== undefined) {
@@ -335,6 +434,17 @@
                 });
             }
           }).call(networkGraph.drag(simulation));
+
+        const zoomHandler = d3.zoom()
+          .scaleExtent([0.5, 3])
+          .translateExtent([[-1000, -1000], [2000, 2000]])
+          .on('zoom', () => gHolder.attr('transform', d3.event.transform));
+
+        zoomHandler(svg);
+
+        if (document.querySelector('#chart').clientHeight === 500) {
+          gHolder.attr('transform', 'scale(0.5)');
+        }
         
         simulation.on('tick', () => {
           link.attr('x1', row => row.source.x)
