@@ -19,4 +19,15 @@
       }
     }
   }
+
+  .profile-form {
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    background: #f5f7fa;
+  }
 }

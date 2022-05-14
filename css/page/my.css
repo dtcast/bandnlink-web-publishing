@@ -47,4 +47,22 @@
   background: #3182f6;
   color: white;
 }
+
+.my-page .profile-form,
+.manage-page .profile-form {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  background: #f5f7fa;
+}
 /*# sourceMappingURL=my.css.map */

@@ -17,8 +17,13 @@
 		min-height: auto;
     overflow: hidden;
 
+    &.aside-page {
+      display: flex;
+      flex-flow: column;
+    }
+
     aside {
-      margin: 0 10px 20px;
+      margin: 0 15px 20px;
       width: auto;
 
 			h2 {
@@ -53,6 +58,10 @@
         }
       }
     }
+
+    .contents-container {
+      padding: 0 15px;
+    }
   }
 
 	.insight-page, .insight2-page {
@@ -61,7 +70,6 @@
 
   .cs-page {
     .contents-container {
-      padding: 0 15px;
 
 			h2 {
 				padding: 10px 0;

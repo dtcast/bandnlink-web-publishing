@@ -144,6 +144,16 @@ footer .container .item span {
   width: 1280px;
 }
 
+.page.aside-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
 .page h2,
 .page h3,
 .page h4,
