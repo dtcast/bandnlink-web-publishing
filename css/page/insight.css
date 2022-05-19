@@ -146,14 +146,14 @@
 .insight-detail-page > div:first-of-type #chart {
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 600px;
   margin-top: 42px;
   background: #fbfbfb;
 }
 
 .insight-detail-page > div:first-of-type #chart > svg {
   width: 100%;
-  height: 800px;
+  height: 600px;
   background: #fbfbfb;
 }
 

@@ -1,374 +1,382 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Band&Cast</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-    />
-    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-      crossorigin="anonymous"
-    ></script>
-    <!-- import CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-    />
-    <!-- import JavaScript -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <!--  import d3 -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
-  </head>
-  <body>
-    <header class="border">
-      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
-      <ul class="menus">
-        <li>
-          <a href="./campaign.html">캠페인</a>
-        </li>
-        <li>
-          <a href="./insight.html">#인사이트</a>
-        </li>
-        <li>
-          <a href="./cs_notice_list.html">고객센터</a>
-        </li>
-        <li>
-          <a href="./login.html">로그인</a>
-        </li>
-        <li>
-          <a href="./mypage.html">마이페이지</a>
-        </li>
-        <li>
-          <a href="./manage.html">관리페이지</a>
-        </li>
-      </ul>
-    </header>
-    <main class="page insight-detail-page">
-      <div>
-        <p class="title">맛집 + 분위기</p>
-        <div id="chart">
-          <svg></svg>
-          <div class="loading-spinner">
-            <svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
-          </div>
+
+<head>
+  <title>Band&Cast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <!--  import d3 -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+</head>
+
+<body>
+  <header class="border">
+    <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+    <ul class="menus">
+      <li>
+        <a href="./campaign.html">캠페인</a>
+      </li>
+      <li>
+        <a href="./insight.html">#인사이트</a>
+      </li>
+      <li>
+        <a href="./cs_notice_list.html">고객센터</a>
+      </li>
+      <li>
+        <a href="./login.html">로그인</a>
+      </li>
+      <li>
+        <a href="./mypage.html">마이페이지</a>
+      </li>
+      <li>
+        <a href="./manage.html">관리페이지</a>
+      </li>
+    </ul>
+  </header>
+  <main class="page insight-detail-page">
+    <div>
+      <p class="title">맛집 + 분위기</p>
+      <div id="chart">
+        <svg></svg>
+        <div class="loading-spinner">
+          <svg viewBox="25 25 50 50" class="circular">
+            <circle cx="50" cy="50" r="20" fill="none" class="path"></circle>
+          </svg>
         </div>
       </div>
-      <div>
-        <div class="box">
-          <p class="box-title">선택된 해시태그 목록</p>
-          <ul class="btns">
-            <li>#맛집</li>
-          </ul>
+    </div>
+    <div>
+      <div class="box">
+        <p class="box-title">선택된 해시태그 목록</p>
+        <ul class="btns">
+          <li>#맛집</li>
+        </ul>
+      </div>
+      <div class="box mt-10">
+        <p class="box-title">해시태그 직접 입력</p>
+        <ul class="btns">
+          <li>
+            #맛집
+          </li>
+        </ul>
+        <div style="position: absolute;left:-1px;bottom:-1px;right:-1px;display: flex; flex-flow: row">
+          <input type="text"
+            style="padding: 0 30px;border:1px solid #e9eaec;flex-grow: 1;border-right: none;outline: none;;" />
+          <button class="btn btn-secondary">추가</button>
         </div>
-        <button class="btn btn-primary btn-search" onclick="location.href='/insight2.html'">인플루언서 검색</button>
       </div>
-    </main>
-    <footer>
-      <div class="container">
-        <p class="logo">Band<span>&</span>Cast</p>
-        <p class="item mt-20">
-          <span>대표자 : 홍길동</span>
-          <span>주소 : 서울특별시 강남구 역삼동</span>
-        </p>
-        <p class="item">
-          <span>이메일 : abc@abc.com</span>
-          <span>사업자등록번호 : 123-123-1234</span>
-          <span>등록일 : 2023. 01. 01 </span>
-        </p>
-        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
-      </div>
-    </footer>
-  </body>
-  <script>
-    let selectedSet = new Set();
+      <button class="btn btn-primary btn-search" onclick="location.href='/insight2.html'">인플루언서 검색</button>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p class="logo">Band<span>&</span>Cast</p>
+      <p class="item mt-20">
+        <span>대표자 : 홍길동</span>
+        <span>주소 : 서울특별시 강남구 역삼동</span>
+      </p>
+      <p class="item">
+        <span>이메일 : abc@abc.com</span>
+        <span>사업자등록번호 : 123-123-1234</span>
+        <span>등록일 : 2023. 01. 01 </span>
+      </p>
+      <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+<script>
+  let selectedSet = new Set();
 
-    function refresh() {
-      document.querySelector('.box > .btns').innerHTML = '';
-      selectedSet.forEach(name => {
-        const btn = document.createElement('li');
-        btn.textContent = '#' + name;
-        if (!['맛집', '분위기'].includes(name)) {
-          btn.style.backgroundColor = '#09CC7A';
-        }
+  function refresh() {
+    document.querySelector('.box > .btns').innerHTML = '';
+    selectedSet.forEach(name => {
+      const btn = document.createElement('li');
+      btn.textContent = '#' + name;
+      if (!['맛집', '분위기'].includes(name)) {
+        btn.style.backgroundColor = '#09CC7A';
+      }
 
-        document.querySelector('.box > .btns').appendChild(btn);
-      })
-    }
+      document.querySelector('.box > .btns').appendChild(btn);
+    })
+  }
 
-    const data = [
-      {
-        "id": 1,
-        "name": "맛집",
-        "size": 80,
-        "depth": 1,
-        "postCount": 10
-      },
-      {
-        "id": 2,
-        "name": "분위기",
-        "size": 80,
-        "depth": 1,
-        "postCount": 10
-      },
-      {
-        "id": 3,
-        "name": "인테리어",
-        "size": 60,
-        "parentIds": [1, 2],
-        "depth": 2,
-        "postCount": 10
-      },
-      {
-        "id": 4,
-        "name": "데이트",
-        "size": 60,
-        "parentIds": [1, 2],
-        "postCount": 10
-      },
-      {
-        "id": 5,
-        "name": "디저트",
-        "size": 50,
-        "parentIds": [1, 2],
-        "depth": 2
-      },
-      {
-        "id": 6,
-        "name": "카페",
-        "size": 40,
-        "parentIds": [4],
-        "depth": 2
-      },
-      {
-        "id": 7,
-        "name": "압구정",
-        "size": 40,
-        "parentIds": [4],
-        "depth": 2
-      },
-      {
-        "id": 8,
-        "name": "파스타",
-        "size": 40,
-        "parentIds": [4],
-        "depth": 3
-      },
-      {
-        "id": 9,
-        "name": "로데오 거리",
-        "size": 30,
-        "parentIds": [7],
-        "depth": 4
-      },
-      {
-        "id": 10,
-        "name": "신사동",
-        "size": 30,
-        "parentIds": [7],
-        "depth": 4
-      },
-      {
-        "id": 11,
-        "name": "현대 백화점",
-        "size": 30,
-        "parentIds": [7],
-        "depth": 4
-      },
-      {
-        "id": 12,
-        "name": "프로포즈",
-        "size": 60,
-        "parentIds": [2],
-        "depth": 2
-      },
-      {
-        "id": 13,
-        "name": "레스토랑",
-        "size": 40,
-        "parentIds": [12],
-        "depth": 3
-      },
-      {
-        "id": 14,
-        "name": "무인도",
-        "size": 40,
-        "parentIds": [12],
-        "depth": 3
-      },
-      {
-        "id": 15,
-        "name": "요트",
-        "size": 40,
-        "parentIds": [12],
-        "depth": 3
-      },
-      {
-        "id": 16,
-        "name": "시그니엘 호텔",
-        "size": 40,
-        "parentIds": [12],
-        "depth": 3
-      },
-      {
-        "id": 17,
-        "name": "방송 출연",
-        "size": 40,
-        "parentIds": [1],
-        "depth": 2
-      },
-      {
-        "id": 18,
-        "name": "백종원 추천",
-        "size": 30,
-        "parentIds": [17],
-        "depth": 3
-      },
-      {
-        "id": 19,
-        "name": "인도 커리",
-        "size": 30,
-        "parentIds": [17],
-        "depth": 3
-      },
-      {
-        "id": 20,
-        "name": "한식",
-        "size": 30,
-        "parentIds": [17],
-        "depth": 3
-      },
-      {
-        "id": 21,
-        "name": "모던",
-        "size": 40,
-        "parentIds": [3],
-        "depth": 3
-      },
-      {
-        "id": 22,
-        "name": "북유럽",
-        "size": 40,
-        "parentIds": [3],
-        "depth": 3
-      },
-      {
-        "id": 23,
-        "name": "클래식",
-        "size": 40,
-        "parentIds": [3],
-        "depth": 3
-      },
-      {
-        "id": 24,
-        "name": "빈티지",
-        "size": 40,
-        "parentIds": [3],
-        "depth": 3
-      },
-    ];
+  const data = [
+    {
+      "id": 1,
+      "name": "맛집",
+      "size": 80,
+      "depth": 1,
+      "postCount": 10
+    },
+    {
+      "id": 2,
+      "name": "분위기",
+      "size": 80,
+      "depth": 1,
+      "postCount": 10
+    },
+    {
+      "id": 3,
+      "name": "인테리어",
+      "size": 60,
+      "parentIds": [1, 2],
+      "depth": 2,
+      "postCount": 10
+    },
+    {
+      "id": 4,
+      "name": "데이트",
+      "size": 60,
+      "parentIds": [1, 2],
+      "postCount": 10
+    },
+    {
+      "id": 5,
+      "name": "디저트",
+      "size": 50,
+      "parentIds": [1, 2],
+      "depth": 2
+    },
+    {
+      "id": 6,
+      "name": "카페",
+      "size": 40,
+      "parentIds": [4],
+      "depth": 2
+    },
+    {
+      "id": 7,
+      "name": "압구정",
+      "size": 40,
+      "parentIds": [4],
+      "depth": 2
+    },
+    {
+      "id": 8,
+      "name": "파스타",
+      "size": 40,
+      "parentIds": [4],
+      "depth": 3
+    },
+    {
+      "id": 9,
+      "name": "로데오 거리",
+      "size": 30,
+      "parentIds": [7],
+      "depth": 4
+    },
+    {
+      "id": 10,
+      "name": "신사동",
+      "size": 30,
+      "parentIds": [7],
+      "depth": 4
+    },
+    {
+      "id": 11,
+      "name": "현대 백화점",
+      "size": 30,
+      "parentIds": [7],
+      "depth": 4
+    },
+    {
+      "id": 12,
+      "name": "프로포즈",
+      "size": 60,
+      "parentIds": [2],
+      "depth": 2
+    },
+    {
+      "id": 13,
+      "name": "레스토랑",
+      "size": 40,
+      "parentIds": [12],
+      "depth": 3
+    },
+    {
+      "id": 14,
+      "name": "무인도",
+      "size": 40,
+      "parentIds": [12],
+      "depth": 3
+    },
+    {
+      "id": 15,
+      "name": "요트",
+      "size": 40,
+      "parentIds": [12],
+      "depth": 3
+    },
+    {
+      "id": 16,
+      "name": "시그니엘 호텔",
+      "size": 40,
+      "parentIds": [12],
+      "depth": 3
+    },
+    {
+      "id": 17,
+      "name": "방송 출연",
+      "size": 40,
+      "parentIds": [1],
+      "depth": 2
+    },
+    {
+      "id": 18,
+      "name": "백종원 추천",
+      "size": 30,
+      "parentIds": [17],
+      "depth": 3
+    },
+    {
+      "id": 19,
+      "name": "인도 커리",
+      "size": 30,
+      "parentIds": [17],
+      "depth": 3
+    },
+    {
+      "id": 20,
+      "name": "한식",
+      "size": 30,
+      "parentIds": [17],
+      "depth": 3
+    },
+    {
+      "id": 21,
+      "name": "모던",
+      "size": 40,
+      "parentIds": [3],
+      "depth": 3
+    },
+    {
+      "id": 22,
+      "name": "북유럽",
+      "size": 40,
+      "parentIds": [3],
+      "depth": 3
+    },
+    {
+      "id": 23,
+      "name": "클래식",
+      "size": 40,
+      "parentIds": [3],
+      "depth": 3
+    },
+    {
+      "id": 24,
+      "name": "빈티지",
+      "size": 40,
+      "parentIds": [3],
+      "depth": 3
+    },
+  ];
 
-		const networkGraph = {
-      createGrapth: () => {
-        const nodes = data.map(Object.create);
+  const networkGraph = {
+    createGrapth: () => {
+      const nodes = data.map(Object.create);
 
-        const links = data.filter(row => {
-          return row.parentIds !== undefined;
-        }).map(row => {
-          return row.parentIds.map(parentId => {
-            return Object.create({
-              source: parentId,
-              target: row.id,
-            });
+      const links = data.filter(row => {
+        return row.parentIds !== undefined;
+      }).map(row => {
+        return row.parentIds.map(parentId => {
+          return Object.create({
+            source: parentId,
+            target: row.id,
           });
-        }).flat();
+        });
+      }).flat();
 
-        const width = 800;
-        const height = 800;
-        
-        const simulation = d3.forceSimulation(nodes)
-          .force('link', d3.forceLink(links).id(row => row.id))
-          .force('charge', d3.forceManyBody().strength(-100))
-          .force('center', d3.forceCenter(width / 2, height / 2))
-          .force('collide', d3.forceCollide().radius(row => row.size * 1.3));
+      const width = 800;
+      const height = 600;
 
-        const svg = d3.select('#chart > svg')
-          .style('visibility', 'hidden');
-        
-        setTimeout(() => {
-          svg.style('visibility', 'visible');
-          d3.select('#chart > .loading-spinner')
-            .style('display', 'none');
-        }, 2000);
-        
-        const gHolder = svg.append('g')
-          .attr('class', 'g-holder');
-        
-        const link = gHolder.append('g')
-          .attr('stroke', '#999')
-          .attr('stroke-opacity', 0.6)
-          .selectAll('line')
-          .data(links)
-          .join('line')
-          .attr('stroke-width', 2)
-          .attr('stroke-dasharray', 2.67372);
+      const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(row => row.id))
+        .force('charge', d3.forceManyBody().strength(-100))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('collide', d3.forceCollide().radius(row => row.size * 1.3));
 
-        const defs = svg.append('defs');
+      const svg = d3.select('#chart > svg')
+        .style('visibility', 'hidden');
 
-        const filter = defs.append('filter')
-          .attr('id', 'drop-shadow')
-          .attr('height', '130%');
-        
-        filter.append("feGaussianBlur")
-          // .attr("in", "SourceAlpha")
-          .attr("stdDeviation", 3)
-          .attr("result", "blur");
+      setTimeout(() => {
+        svg.style('visibility', 'visible');
+        d3.select('#chart > .loading-spinner')
+          .style('display', 'none');
+      }, 2000);
 
-        filter.append("feOffset")
-          .attr("in", "blur")
-          .attr("dx", 0)
-          .attr("dy", 0)
-          .attr("result", "offsetBlur");
+      const gHolder = svg.append('g')
+        .attr('class', 'g-holder');
 
-        const feMerge = filter.append("feMerge");
+      const link = gHolder.append('g')
+        .attr('stroke', '#999')
+        .attr('stroke-opacity', 0.6)
+        .selectAll('line')
+        .data(links)
+        .join('line')
+        .attr('stroke-width', 2)
+        .attr('stroke-dasharray', 2.67372);
 
-        feMerge.append("feMergeNode")
-          .attr("in", "offsetBlur")
-        feMerge.append("feMergeNode")
-          .attr("in", "SourceGraphic");
-        
-        const node = gHolder.append('g')
-          .attr('class', 'circle-node-holder')
-          .selectAll('g')
-          .data(nodes)
-          .enter()
-          .append('g')
-          .each(function (row) {
-            if (row.depth === 1) selectedSet.add(row.name);
-            refresh();
+      const defs = svg.append('defs');
 
-            const circle = d3.select(this)
-              .append('circle')
-              .attr('r', row.size)
-              .attr('fill', row.depth === 1 ? '#3182F6' : '#4C5864')
-              .style('filter', 'url(#drop-shadow)')
-              .style('cursor', 'pointer');
+      const filter = defs.append('filter')
+        .attr('id', 'drop-shadow')
+        .attr('height', '130%');
 
-            const text = d3.select(this)
-              .append('text');
-            
-            let lineNumber = 0;
+      filter.append("feGaussianBlur")
+        // .attr("in", "SourceAlpha")
+        .attr("stdDeviation", 3)
+        .attr("result", "blur");
 
-            if (row.name.includes(' ')) {
-              const words = row.name.split(' ');
+      filter.append("feOffset")
+        .attr("in", "blur")
+        .attr("dx", 0)
+        .attr("dy", 0)
+        .attr("result", "offsetBlur");
 
-              words.forEach(word => {
-                text.append('tspan')
+      const feMerge = filter.append("feMerge");
+
+      feMerge.append("feMergeNode")
+        .attr("in", "offsetBlur")
+      feMerge.append("feMergeNode")
+        .attr("in", "SourceGraphic");
+
+      const node = gHolder.append('g')
+        .attr('class', 'circle-node-holder')
+        .selectAll('g')
+        .data(nodes)
+        .enter()
+        .append('g')
+        .each(function (row) {
+          if (row.depth === 1) selectedSet.add(row.name);
+          refresh();
+
+          const circle = d3.select(this)
+            .append('circle')
+            .attr('r', row.size)
+            .attr('fill', row.depth === 1 ? '#3182F6' : '#4C5864')
+            .style('filter', 'url(#drop-shadow)')
+            .style('cursor', 'pointer');
+
+          const text = d3.select(this)
+            .append('text');
+
+          let lineNumber = 0;
+
+          if (row.name.includes(' ')) {
+            const words = row.name.split(' ');
+
+            words.forEach(word => {
+              text.append('tspan')
                 .attr('x', 0)
                 .attr('y', 0)
                 .attr('dy', (++lineNumber * 16) - (words.length * 8)).text(word)
@@ -377,119 +385,120 @@
                 .style('font-weight', '700')
                 .style('fill', '#fff')
                 .attr('class', 'node-label');
-              });
-            } else {
-              text.text(row.name)
-                .attr('dy', 6)
-                .style('text-anchor', 'middle')
-                .style('font-size', ['20px', '16px', '14px', '12px'][row.depth - 1])
-                .style('font-weight', '700')
-                .style('fill', '#fff')
-                .attr('class', 'node-label');
-            }
-            
+            });
+          } else {
+            text.text(row.name)
+              .attr('dy', 6)
+              .style('text-anchor', 'middle')
+              .style('font-size', ['20px', '16px', '14px', '12px'][row.depth - 1])
+              .style('font-weight', '700')
+              .style('fill', '#fff')
+              .attr('class', 'node-label');
+          }
+
+          d3.select(this)
+            .on('click', () => {
+              if (selectedSet.has(row.name)) {
+                circle.attr('fill', '#4C5864');
+                selectedSet.delete(row.name);
+              } else {
+                circle.attr('fill', row.depth === 1 ? '#3182F6' : '#09CC7A');
+                selectedSet.add(row.name);
+              }
+              refresh();
+            });
+
+          if (row.postCount !== undefined) {
+            const tooltip = d3.select(this)
+              .append('rect');
+            const text = d3.select(this)
+              .append('text')
+              .text(row.postCount);
+
+            const textBBox = text.node().getBBox()
+
+            text
+              .attr('x', 0)
+              .attr('y', -row.size)
+              .attr('dy', -7)
+              .attr('fill', '#ffffff')
+              .style('text-anchor', 'middle')
+              .style('opacity', 0);
+
+            const tooltipWidth = textBBox.width + 15;
+            const tooltipHeight = textBBox.height + 5;
+
+            tooltip
+              .style('opacity', 0)
+              .attr('width', tooltipWidth)
+              .attr('height', tooltipHeight)
+              .attr('x', -(tooltipWidth / 2))
+              .attr('y', Number(text.attr('y')) - tooltipHeight)
+              .attr('rx', 8)
+              .attr('ry', 8);
+
             d3.select(this)
-              .on('click', () => {
-                if (selectedSet.has(row.name)) {
-                  circle.attr('fill', '#4C5864');
-                  selectedSet.delete(row.name);
-                } else {
-                  circle.attr('fill', row.depth === 1 ? '#3182F6' : '#09CC7A');
-                  selectedSet.add(row.name);
-                }
-                refresh();
+              .on('mouseover', () => {
+                tooltip.transition().duration(200).style('opacity', 1);
+                text.transition().duration(200).style('opacity', 1);
+              })
+              .on('mouseout', () => {
+                tooltip.transition().duration(300).style('opacity', 0);
+                text.transition().duration(300).style('opacity', 0);
               });
+          }
+        }).call(networkGraph.drag(simulation));
 
-            if (row.postCount !== undefined) {
-              const tooltip = d3.select(this)
-                .append('rect');
-              const text = d3.select(this)
-                .append('text')
-                .text(row.postCount);
-              
-              const textBBox = text.node().getBBox()
+      const zoomHandler = d3.zoom()
+        .scaleExtent([0.5, 3])
+        .translateExtent([[-1000, -1000], [2000, 2000]])
+        .on('zoom', () => gHolder.attr('transform', d3.event.transform));
 
-              text
-                .attr('x', 0)
-                .attr('y', -row.size)
-                .attr('dy', -7)
-                .attr('fill', '#ffffff')
-                .style('text-anchor', 'middle')
-                .style('opacity', 0);
-              
-              const tooltipWidth = textBBox.width + 15;
-              const tooltipHeight = textBBox.height + 5;
+      zoomHandler(svg);
 
-              tooltip
-                .style('opacity', 0)
-                .attr('width', tooltipWidth)
-                .attr('height', tooltipHeight)
-                .attr('x', -(tooltipWidth / 2))
-                .attr('y', Number(text.attr('y')) - tooltipHeight)
-                .attr('rx', 8)
-                .attr('ry', 8);
-              
-              d3.select(this)
-                .on('mouseover', () => {
-                  tooltip.transition().duration(200).style('opacity', 1);
-                  text.transition().duration(200).style('opacity', 1);
-                })
-                .on('mouseout', () => {
-                  tooltip.transition().duration(300).style('opacity', 0);
-                  text.transition().duration(300).style('opacity', 0);
-                });
-            }
-          }).call(networkGraph.drag(simulation));
-
-        const zoomHandler = d3.zoom()
-          .scaleExtent([0.5, 3])
-          .translateExtent([[-1000, -1000], [2000, 2000]])
-          .on('zoom', () => gHolder.attr('transform', d3.event.transform));
-
-        zoomHandler(svg);
-
-        if (document.querySelector('#chart').clientHeight === 500) {
-          gHolder.attr('transform', 'scale(0.5)');
-        }
-        
-        simulation.on('tick', () => {
-          link.attr('x1', row => row.source.x)
-            .attr('y1', row => row.source.y)
-            .attr('x2', row => row.target.x)
-            .attr('y2', row => row.target.y);
-          
-          node.attr('transform', row => `translate(${row.x}, ${row.y})`);
-        });
-
-        return svg.node();
-      },
-      drag: (simulation) => {
-        function dragstarted(row) {
-          if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-
-          row.fx = row.x;
-          row.fy = row.y;
-        }
-
-        function dragged(row) {
-          row.fx = d3.event.x;
-          row.fy = d3.event.y;
-        }
-
-        function dragended(row) {
-          if (!d3.event.active) simulation.alphaTarget(0);
-
-          row.fx = null;
-          row.fy = null;
-        }
-
-        return d3.drag()
-          .on('start', dragstarted)
-          .on('drag', dragged)
-          .on('end', dragended);
+      if (document.querySelector('#chart').clientHeight === 500) {
+        gHolder.attr('transform', 'scale(0.5)');
       }
-    }
 
-    networkGraph.createGrapth();
-  </script>
+      simulation.on('tick', () => {
+        link.attr('x1', row => row.source.x)
+          .attr('y1', row => row.source.y)
+          .attr('x2', row => row.target.x)
+          .attr('y2', row => row.target.y);
+
+        node.attr('transform', row => `translate(${row.x}, ${row.y})`);
+      });
+
+      return svg.node();
+    },
+    drag: (simulation) => {
+      function dragstarted(row) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+
+        row.fx = row.x;
+        row.fy = row.y;
+      }
+
+      function dragged(row) {
+        row.fx = d3.event.x;
+        row.fy = d3.event.y;
+      }
+
+      function dragended(row) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+
+        row.fx = null;
+        row.fy = null;
+      }
+
+      return d3.drag()
+        .on('start', dragstarted)
+        .on('drag', dragged)
+        .on('end', dragended);
+    }
+  }
+
+  networkGraph.createGrapth();
+</script>
+
 </html>
