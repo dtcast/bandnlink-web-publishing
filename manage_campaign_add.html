@@ -108,12 +108,14 @@
         </div>
         <p class="input-title mt-20">제목</p>
         <input type="text" placeholder="제목" class="input" style="width:100%;box-sizing: border-box;" />
-        <p class="input-title mt-20">상세설명</p>
+        <p class="input-title mt-20">짧은 설명</p>
+        <input type="text" placeholder="제목" class="input" style="width:100%;box-sizing: border-box;" />
+        <p class="input-title mt-20">상세 설명</p>
         <textarea class="input" style="width:100%;box-sizing: border-box;"></textarea>
         <p class="input-title mt-20">썸네일 이미지</p>
-        <input type="file"/>
+        <input type="file" />
         <p class="input-title mt-20">관련 이미지</p>
-        <input type="file"/>
+        <input type="file" />
         <p class="input-title mt-20">모집 방식</p>
         <div class="input-wrap">
           <input type="radio" name="joinType" id="joinType1" required /><label for="joinType1">공개</label>
@@ -127,17 +129,23 @@
         </div>
         <p class="input-title mt-20">캠페인 기간</p>
         <div class="input-wrap">
-          <input type="text" class="datepicker" name="recruitStartDate">
+          <input type="text" class="datepicker" name="startDate">
           <span class="mx-10">~</span>
-          <input type="text" class="datepicker" name="reqruitEndDate">
+          <input type="text" class="datepicker" name="endDate">
         </div>
         <p class="input-title mt-20">체크 리스트</p>
         <input class="input" style="width:100%;box-sizing: border-box;"></input>
         <p class="input-title mt-20">담당자 연락처</p>
         <input class="input" style="width:100%;box-sizing: border-box;"></input>
+        <p class="input-title mt-20">담당자 이메일</p>
+        <input class="input" style="width:100%;box-sizing: border-box;"></input>
         <p class="input-title mt-20">보상</p>
         <textarea class="input" style="width:100%;box-sizing: border-box;"></textarea>
         <button class="btn btn-primary" style="display:block;margin:20px auto 0">등록 신청</button>
+        <p class="input-title mt-20">보상 포인트</p>
+        <div class="input-wrap">
+          <input class="input"></input>P
+        </div>
       </div>
   </main>
   <footer>
