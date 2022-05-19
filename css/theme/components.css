@@ -211,11 +211,28 @@
   padding: 0 45px 0 15px;
   border: 1px solid #e9eaec;
   letter-spacing: 1px;
+  background: white;
   -o-appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: url(../img/i_arr_down.svg) center right 20px no-repeat;
+}
+
+.datepicker {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 140px;
+  border: none;
+  outline: none;
+  line-height: 40px;
+  height: 40px;
+  color: #4c5864;
+  border: 1px solid #e9eaec;
+  letter-spacing: 1px;
+  background: white;
+  text-align: center;
 }
 
 .badge {
