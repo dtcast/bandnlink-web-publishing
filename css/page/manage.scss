@@ -1,0 +1,15 @@
+@import "../theme/color.scss";
+
+.manage-page {
+    
+    .navs {
+        display: flex;
+        flex-flow: row;
+        background: $color-flat-white;
+
+        > li {
+            background: blue;
+            color: white;
+        }
+    }
+}

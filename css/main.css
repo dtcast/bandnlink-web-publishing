@@ -2456,4 +2456,324 @@ footer .container .item span {
     padding: 5%;
   }
 }
+
+.manage-campaign-page .navs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  background: #f5f7fa;
+  width: 100%;
+}
+
+.manage-campaign-page .navs > li {
+  color: #1f2e3d;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 44px;
+  line-height: 44px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.manage-campaign-page .navs > li.active, .manage-campaign-page .navs > li:hover {
+  background: #3182f6;
+  color: #fff;
+}
+
+.manage-campaign-page .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.manage-campaign-page .tabs > li {
+  padding: 0 10px;
+  border-right: #e9eaec;
+  color: #8b95a1;
+  border-right: 1px solid #e9eaec;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.manage-campaign-page .tabs > li:last-of-type {
+  border-right: none;
+}
+
+.manage-campaign-page .tabs > li.active {
+  color: #3182f6;
+  font-weight: 500;
+}
+
+.manage-campaign-page .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  border: 1px solid #e9eaec;
+  min-height: 500px;
+}
+
+.manage-campaign-page .container .users-area {
+  width: 200px;
+  border-right: 1px solid #e9eaec;
+}
+
+.manage-campaign-page .container .users-area .users {
+  width: 100%;
+  height: 100%;
+}
+
+.manage-campaign-page .container .users-area .users > li {
+  position: relative;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  cursor: pointer;
+}
+
+.manage-campaign-page .container .users-area .users > li.active, .manage-campaign-page .container .users-area .users > li:hover {
+  background: #f5f7fa;
+}
+
+.manage-campaign-page .container .users-area .users > li .thumb {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  background: #e3e3e6;
+}
+
+.manage-campaign-page .container .users-area .users > li .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.manage-campaign-page .container .users-area .users > li .user-info .title {
+  font-size: 15px;
+}
+
+.manage-campaign-page .container .users-area .users > li .user-info .subtitle {
+  color: #8b95a1;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.manage-campaign-page .container .users-area .users > li .user-info .time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #8b95a1;
+  font-size: 13px;
+}
+
+.manage-campaign-page .container .users-area .users > li .user-info .badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 5px;
+  background: #f56c6c;
+  color: #f5f7fa;
+  padding: 2px 5px;
+}
+
+.manage-campaign-page .container .chat-area {
+  position: relative;
+}
+
+.manage-campaign-page .container .chat-area .chats > li {
+  position: relative;
+  padding: 5px 10px;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.date-item {
+  text-align: center;
+  color: #8b95a1;
+  font-size: 13px;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.date-item::before {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background: #8b95a1;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.date-item span {
+  padding: 0 10px;
+  background: white;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.system-item {
+  text-align: center;
+  color: #8b95a1;
+  font-size: 13px;
+  padding: 15px;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.system-item .bold {
+  font-weight: bold;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.message-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.message-item .message-info {
+  padding-top: 0px;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.message-item .message-info .user-name {
+  color: #4c5864;
+  font-weight: 600;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.message-item .message-info .time {
+  font-size: 13px;
+  color: #8b95a1;
+  font-weight: 400;
+}
+
+.manage-campaign-page .container .chat-area .chats > li.message-item .message-info .message {
+  margin-top: 10px;
+  color: #4c5864;
+}
+
+.manage-campaign-page .container .chat-area .chats > li .thumb {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  background: #e3e3e6;
+}
+
+.manage-campaign-page .container .chat-area .chat-input-area {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.manage-campaign-page .container .chat-area .chat-input-area .input {
+  margin-right: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.manage-campaign-page .container .user-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.manage-campaign-page .container .user-area .chat-area {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.manage-campaign-page .container .user-area .info-area {
+  width: 250px;
+}
+
+.manage-campaign-page .container .user-area .info-area .card {
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+.manage-campaign-page .container .user-area .info-area .card .card-title {
+  background: #f5f7fa;
+  padding: 5px 10px;
+}
+
+.manage-campaign-page .container .user-area .info-area .card .card-body {
+  overflow: hidden;
+  line-height: 1.6;
+}
+
+.manage-campaign-page .container .user-area .info-area .card .card-body .files {
+  font-size: 13px;
+}
+
+.manage-campaign-page .container .user-area .info-area .card .card-body .files li {
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.manage-campaign-page .container .user-area .info-area .card .card-body .files li:first-of-type {
+  margin-top: 0;
+}
+
+.manage-campaign-page .container .user-area .info-area .card .card-body .files li a {
+  color: #409eff;
+  text-decoration: underline;
+  word-break: keep-all;
+}
+
+.manage-campaign-page .container .user-area .info-area .card .card-body .files li span {
+  float: right;
+  color: #c0c4cc;
+  font-size: 11px;
+}
 /*# sourceMappingURL=main.css.map */

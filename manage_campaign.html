@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Band&Cast</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <header class="border">
+        <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+        <ul class="menus">
+            <li>
+                <a href="./campaign.html">캠페인</a>
+            </li>
+            <li>
+                <a href="./insight.html">#인사이트</a>
+            </li>
+            <li>
+                <a href="./cs_notice_list.html">고객센터</a>
+            </li>
+            <li>
+                <a href="./login.html">로그인</a>
+            </li>
+            <li>
+                <a href="./mypage.html">마이페이지</a>
+            </li>
+            <li>
+                <a href="./manage.html">관리페이지</a>
+            </li>
+        </ul>
+    </header>
+    <main class="page aside-page manage-campaign-page">
+        <aside>
+            <h2>관리페이지</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>
+                        <span class="color-primary">(주) 애드오너</span>
+                    </p>
+                    <p class="mt-10">(48305) 서울특별시 동작구 상도로37</p>
+                    <p class="mt-10" style="font-size: 15px">담당자: 김민경 과장</p>
+                </div>
+            </div>
+            <div class="card mt-20">
+                <div class="card-body">
+                    <a href="./manage_profile.html">
+                        업체 정보 관리 <i class="el-icon-arrow-right float-right"></i></a>
+                </div>
+            </div>
+            <div class="card mt-20">
+                <div class="card-head">캠페인 목록</div>
+                <div class="card-body">
+                    <p>
+                        모집 대기
+                        <a class="color-primary float-right bold" href="./manage_campaign.html">23</a>
+                    </p>
+                    <p class="mt-10">
+                        모집 중
+                        <a class="color-primary float-right bold" href="./manage_campaign.html">21</a>
+                    </p>
+                    <p class="mt-10">
+                        진행 대기
+                        <a class="color-secondary float-right" href="./manage_campaign.html">21</a>
+                    </p>
+                    <p class="mt-10">
+                        완료
+                        <a class="color-secondary float-right" href="./manage_campaign.html">23</a>
+                    </p>
+                </div>
+                <div class="card-foot">
+                    <a href="./manage_campaign_add.html">
+                        신규 캠페인 등록
+                        <i class="el-icon-arrow-right float-right"></i>
+                    </a>
+                </div>
+                <div class="card-foot">
+                    <a href="./manage_point.html">
+                        포인트 관리
+                        <i class="el-icon-arrow-right float-right"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <div class="contents-container">
+            <h2>신규 캠페인 등록</h2>
+            <div>
+                <ul class="navs">
+                    <li>캠페인 기획</li>
+                    <li>인플루언서 모집</li>
+                    <li class="active">캠페인 진행</li>
+                    <li>결과 보고</li>
+                </ul>
+                <ul class="tabs mt-20">
+                    <li>전체(500)</li>
+                    <li class="active">발송 준비(300)</li>
+                    <li>배송 대기(100)</li>
+                    <li>원고 대기(100)</li>
+                    <li>업로드 대기(0)</li>
+                    <li>탈락(10)</li>
+                    <li>완료(0)</li>
+                </ul>
+                <div style="float: right">
+                    <i class="el-icon-chat-square"></i>
+                    <i class="el-icon-s-grid"></i>
+                </div>
+                <div class="container mt-20">
+                    <div class="users-area">
+                        <ul class="users">
+                            <li class="active">
+                                <div class="thumb"></div>
+                                <div class="user-info">
+                                    <p class="title"> 신은식 </p>
+                                    <p class="subtitle color-warning">배송 대기</p>
+                                    <span class="time">방금</span>
+                                    <span class="badge">10</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb"></div>
+                                <div class="user-info">
+                                    <p class="title"> 신은식 </p>
+                                    <p class="subtitle color-success">원고 대기</p>
+                                    <span class="time">1시간</span>
+                                    <span class="badge">1</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb"></div>
+                                <div class="user-info">
+                                    <p class="title"> 신은식 </p>
+                                    <p class="subtitle color-primary">업로드 대기</p>
+                                    <span class="time">1시간</span>
+                                    <span class="badge">1</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb"></div>
+                                <div class="user-info">
+                                    <p class="title"> 신은식 </p>
+                                    <p class="subtitle color-danger">탈락</p>
+                                    <span class="time">3일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb"></div>
+                                <div class="user-info">
+                                    <p class="title"> 신은식 </p>
+                                    <p class="subtitle color-secondary">완료</p>
+                                    <span class="time">방금</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-area">
+                        <div class="chat-area">
+                            <ul class="chats">
+                                <li class="date-item">
+                                    <span>2022년 6월 6일</span>
+                                </li>
+                                <li class="system-item">
+                                    <span class="bold">신은식</span>님이 캠페인에 참여하였습니다
+                                </li>
+                                <li class="message-item">
+                                    <div class="thumb"></div>
+                                    <div class="message-info">
+                                        <p class="user-name">
+                                            관리자
+                                            <span class="time">03:03 AM</span>
+                                        </p>
+                                        <p class="message">
+                                            <span class="color-danger">쿠폰 발송</span> 123-123-1234
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="system-item">
+                                    03:05 AM - 배송 대기로 전환
+                                </li>
+                                <li class="date-item">
+                                    <span>2022년 6월 7일</span>
+                                </li>
+                                <li class="message-item">
+                                    <div class="thumb"></div>
+                                    <div class="message-info">
+                                        <p class="user-name">
+                                            사용자
+                                            <span class="time">03:03 AM</span>
+                                        </p>
+                                        <p class="message">
+                                            <span class="color-danger">배송 완료</span>
+                                            배송이 완료되었습니다
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="system-item">
+                                    03:05 AM - 원고 대기로 전환
+                                </li>
+                                <li class="message-item">
+                                    <div class="thumb"></div>
+                                    <div class="message-info">
+                                        <p class="user-name">
+                                            관리자
+                                            <span class="time">03:03 AM</span>
+                                        </p>
+                                        <p class="message">
+                                            원고 양식 전달
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="message-item">
+                                    <div class="thumb"></div>
+                                    <div class="message-info">
+                                        <p class="user-name">
+                                            사용자
+                                            <span class="time">03:03 AM</span>
+                                        </p>
+                                        <p class="message">
+                                            <span class="color-danger">원고 검수 요청</span>
+                                            원고 업로드
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="form chat-input-area">
+                                <input class="input" type="text">
+                                <button class="btn-primary btn">전송</button>
+                            </div>
+                        </div>
+                        <div class="info-area">
+                            <div class="card">
+                                <div class="card-title">고객정보</div>
+                                <div class="card-body">
+                                    <p>s@typer.kr</p>
+                                    <p>30대 · 남 · 부산</p>
+                                    <p>010-2650-5108</p>
+                                    <p>인스타: xxxx</p>
+                                    <p>일방문자수 3000명</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-title">상태정보</div>
+                                <div class="card-body form">
+                                    <select name="" id="" class="select" style="width: 100%;box-sizing:border-box">
+                                        <option value="">발송 준비</option>
+                                        <option value="">배송 대기</option>
+                                        <option value="">원고 대기</option>
+                                        <option value="">업로드 대기</option>
+                                        <option value="">탈락</option>
+                                        <option value="">완료</option>
+                                    </select>
+                                    <textarea class="input mt-10" style="width: 100%;box-sizing:border-box"
+                                        placeholder="메모를 입력해주세요"></textarea>
+                                    <button class="btn btn-success btn-small mt-10" style="float:right">저장</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-title">배송정보</div>
+                                <div class="card-body">
+                                    서울시 송파구 백제고분로 123길 1413호
+                                    <hr class="my-10" />
+                                    대한통운<br />123-123-1234
+                                    <div class="btn btn-secondary mt-10" style="float:right">송장번호 수정</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-title">파일 모아보기</div>
+                                <div class="card-body">
+                                    <ul class="files">
+                                        <li>
+                                            <a href="">업로드문서.hwp</a><br />
+                                            <span>2022-06-22 12:00</span>
+                                        </li>
+                                        <li>
+                                            <a href="">업로드문서.hwp</a><br />
+                                            <span>2022-06-22 12:00</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="logo">Band<span>&</span>Cast</p>
+            <p class="item mt-20">
+                <span>대표자 : 홍길동</span>
+                <span>주소 : 서울특별시 강남구 역삼동</span>
+            </p>
+            <p class="item">
+                <span>이메일 : abc@abc.com</span>
+                <span>사업자등록번호 : 123-123-1234</span>
+                <span>등록일 : 2023. 01. 01 </span>
+            </p>
+            <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
