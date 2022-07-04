@@ -15,6 +15,8 @@
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
   <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+  <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 </head>
 
 <body>
@@ -138,24 +140,28 @@
           });
         </script>
         <p class="input-title mt-20">상세 설명</p>
-        <textarea class="input" style="width:100%;box-sizing: border-box;"></textarea>
-        <p class="input-title mt-20">모집 방식</p>
-        <div class="input-wrap">
-          <input type="radio" name="joinType" id="joinType1" required /><label for="joinType1">공개</label>
-          <input type="radio" name="joinType" id="joinType2" class="ml-10" required /><label for="joinType2">비공개</label>
+        <div style="width:100%;box-sizing: border-box;height:500px" id="editor"></div>
+        <h3 class="mt-30">운영 정보</h3>
+        <p class="input-title mt-20">모집 인원</p>
+        <input class="input" style="text-align: right" value="0 명"></input>
+        <p class="input-title mt-20">배송 여부</p>
+        <div class="input-wrap" style="align-items: center">
+          <input type="radio" name="joinType" id="joinType5" required /><label for="joinType5">배송</label>
+          <input type="radio" name="joinType" id="joinType6" class="ml-10" required /><label for="joinType6">쿠폰</label>
+          <input type="radio" name="joinType" id="joinType9" class="ml-10" required /><label for="joinType9">사용안함</label>
         </div>
         <p class="input-title mt-20">원고 검수</p>
-        <div class="input-wrap">
-          <input type="radio" name="joinType" id="joinType1" required /><label for="joinType1">진행</label>
-          <input type="radio" name="joinType" id="joinType2" class="ml-10" required /><label for="joinType2">비진행</label>
+        <div class="input-wrap" style="align-items: center">
+          <input type="checkbox" id="useCheck"><label for="useCheck" style="margin-left:3px">원고 검수 진행</label>
         </div>
         <p class="input-title mt-20">보상 포인트</p>
-        <input class="input" style="text-align: right" value="0"></input>
+        <input class="input" style="text-align: right" value="0 P"></input>
         <h3 class="mt-30">기간 정보</h3>
         <style>
           .input-wrap {
             position: relative;
           }
+
           .dot {
             position: absolute;
             left: 0;
@@ -204,8 +210,19 @@
           </div>
           <div style="position: absolute;top:20px;left:3px;width:1px;bottom:20px;background:#e9eaec;"></div>
         </div>
-        <button class="btn btn-primary" style="display:block;margin:20px auto 0;padding:15px 60px">저장 </button>
+        <div style="text-align:center" class="mt-20">
+          <button class="btn btn-secondary" style="padding:15px 60px">취소 </button>
+          <button class="btn btn-primary" style="margin-left:10px;padding:15px 60px">저장 </button>
+        </div>
       </div>
+      <script>
+        const editor = new toastui.Editor({
+          el: document.querySelector('#editor'),
+          height: '500px',
+          initialEditType: 'wysiwyg',
+          previewStyle: 'vertical'
+        });
+      </script>
   </main>
   <footer>
     <div class="container">
