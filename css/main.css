@@ -346,6 +346,17 @@ hr.black {
   background-color: #4c5864;
 }
 
+.btn:disabled {
+  color: #fff;
+  background-color: #c0c4cc;
+  border: 1px solid #c0c4cc;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background-color: #c0c4cc;
+}
+
 .pagination {
   margin: 40px auto;
   display: -webkit-box;
@@ -515,9 +526,9 @@ hr.black {
 }
 
 .form .input-title {
-  color: #8b95a1;
+  color: #4c5864;
   font-size: 13px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .form .input {
@@ -687,6 +698,17 @@ hr.black {
   stroke-linecap: round;
 }
 
+.badge {
+  display: inline-block;
+  margin: 4px;
+  background: #4c5864;
+  color: white;
+}
+
+.badge:last-of-type {
+  margin-bottom: 0;
+}
+
 .popup-wrap {
   position: fixed;
   top: 0;
@@ -757,17 +779,6 @@ hr.black {
   outline: none;
   background: url(../img/i_popup_close.svg) center no-repeat;
   cursor: pointer;
-}
-
-.popup-wrap .popup .badge {
-  display: inline-block;
-  margin: 4px;
-  background: #4c5864;
-  color: white;
-}
-
-.popup-wrap .popup .badge:last-of-type {
-  margin-bottom: 0;
 }
 
 .color-primary {
@@ -2457,6 +2468,27 @@ footer .container .item span {
   }
 }
 
+.manage-campaign-page .campaign-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+}
+
+.manage-campaign-page .campaign-info li {
+  margin: 4px;
+  color: #8b95a1;
+}
+
+.manage-campaign-page .campaign-info li span {
+  margin-left: 40px;
+  color: #4c5864;
+}
+
+.manage-campaign-page .progress-navs,
 .manage-campaign-page .navs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2469,8 +2501,10 @@ footer .container .item span {
   width: 100%;
 }
 
+.manage-campaign-page .progress-navs > li,
 .manage-campaign-page .navs > li {
-  color: #1f2e3d;
+  position: relative;
+  color: #4c5864;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -2490,9 +2524,81 @@ footer .container .item span {
   transition: all 0.2s ease-in-out;
 }
 
-.manage-campaign-page .navs > li.active, .manage-campaign-page .navs > li:hover {
+.manage-campaign-page .progress-navs > li::before,
+.manage-campaign-page .navs > li::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #e9eaec;
+}
+
+.manage-campaign-page .progress-navs > li::after,
+.manage-campaign-page .navs > li::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  top: 0;
+  right: 2px;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #f5f7fa;
+}
+
+.manage-campaign-page .progress-navs > li.active,
+.manage-campaign-page .navs > li.active {
   background: #3182f6;
   color: #fff;
+}
+
+.manage-campaign-page .progress-navs > li.active::before,
+.manage-campaign-page .navs > li.active::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  top: 0;
+  left: -22px;
+  width: 0;
+  height: 0;
+  background: #3182f6;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #f5f7fa;
+}
+
+.manage-campaign-page .progress-navs > li.active::after,
+.manage-campaign-page .navs > li.active::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background: #f5f7fa;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #3182f6;
+}
+
+.manage-campaign-page .progress-navs > li:first-of-type::before,
+.manage-campaign-page .navs > li:first-of-type::before {
+  display: none;
+}
+
+.manage-campaign-page .progress-navs > li:last-of-type::before, .manage-campaign-page .progress-navs > li:last-of-type::after,
+.manage-campaign-page .navs > li:last-of-type::before,
+.manage-campaign-page .navs > li:last-of-type::after {
+  display: none;
 }
 
 .manage-campaign-page .tabs {

@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
   <!-- import JavaScript -->
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+  <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -94,58 +96,115 @@
     <div class="contents-container">
       <h2>신규 캠페인 등록</h2>
       <div class="form profile-form" style="display:box-sizing;padding:20px;border:1px solid #ededed">
-        <p class="input-title mt-30">카테고리</p>
+        <h3>기본 정보</h3>
+        <p class="input-title mt-20">카테고리</p>
         <div class="input-wrap">
           <select class="select" required>
-            <option>카테고리1</option>
-          </select>
-          <select class="select ml-10">
-            <option>카테고리2</option>
-          </select>
-          <select class="select ml-10">
-            <option>카테고리1</option>
+            <option>카테고리</option>
           </select>
         </div>
         <p class="input-title mt-20">제목</p>
-        <input type="text" placeholder="제목" class="input" style="width:100%;box-sizing: border-box;" />
-        <p class="input-title mt-20">짧은 설명</p>
-        <input type="text" placeholder="제목" class="input" style="width:100%;box-sizing: border-box;" />
+        <input type="text" placeholder="제목을 입력해주세요(최대 40자)" class="input" style="width:100%;box-sizing: border-box;" />
+        <p class="input-title mt-20">요약 설명</p>
+        <input type="text" placeholder="요약 설명을 입력해주세요(최대 200자)" class="input"
+          style="width:100%;box-sizing: border-box;" />
+        <p class="input-title mt-20">이미지</p>
+        <div class="my-dropzone dropzone" style="width:100%;min-height:150px;background:white;border:1px solid #e9eaec">
+        </div>
+        <script>
+          // Dropzone.options.dictDefaultMessage = "Drop files here to upload?";
+          // Dropzone.options.dictFallbackMessage = "Your browser does not support drag'n'drop file uploads.";
+          // Dropzone.options.dictFallbackText = "Please use the fallback form below to upload your files like in the olden days.";
+          // Dropzone.options.dictFileTooBig = "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.";
+          // Dropzone.options.dictInvalidFileType = "You can't upload files of this type.";
+          // Dropzone.options.dictResponseError = "Server responded with {{statusCode}} code.";
+          // Dropzone.options.dictCancelUpload = "Cancel upload";
+          // Dropzone.options.dictCancelUploadConfirmation = "Are you sure you want to cancel this upload?";
+          // Dropzone.options.dictRemoveFile = "Remove file";
+          // Dropzone.options.dictMaxFilesExceeded = "You can not upload any more files.";
+          // Dropzone has been added as a global variable.
+          const dropzone = new Dropzone("div.my-dropzone", {
+            dictDefaultMessage: '<div style="font-size:15px"><p>이미지 업로드</p><p style="margin-top:10px;font-size:13px;color:#8b95a1">최소 1개, 최대 10개까지 업로드</p><p style="margin-top:5px;font-size:13px;color:#8b95a1">파일형식: jpg 또는 png, 크기 10MB이하</p></div>',
+            dictRemoveFile: '삭제',
+            url: "/file/post",
+            autoProcessQueue: false,            //자동 업로드
+            paramName: "file",                  //전송받는 파일 파라미터명
+            addRemoveLinks: true,
+            acceptedFiles: "image/jpeg,image/png",
+            uploadMultiple: true,               //다중 파일 업로드
+            parallelUploads: 10,                //동시 업로드 파일 개수
+            maxFilesize: 10,                    //최대 파일 사이즈 (MB)
+            maxFiles: 10,                       //첨부 개수
+          });
+        </script>
         <p class="input-title mt-20">상세 설명</p>
         <textarea class="input" style="width:100%;box-sizing: border-box;"></textarea>
-        <p class="input-title mt-20">썸네일 이미지</p>
-        <input type="file" />
-        <p class="input-title mt-20">관련 이미지</p>
-        <input type="file" />
         <p class="input-title mt-20">모집 방식</p>
         <div class="input-wrap">
           <input type="radio" name="joinType" id="joinType1" required /><label for="joinType1">공개</label>
           <input type="radio" name="joinType" id="joinType2" class="ml-10" required /><label for="joinType2">비공개</label>
         </div>
-        <p class="input-title mt-20">모집 기간</p>
+        <p class="input-title mt-20">원고 검수</p>
         <div class="input-wrap">
-          <input type="text" class="datepicker" name="recruitStartDate">
-          <span class="mx-10">~</span>
-          <input type="text" class="datepicker" name="reqruitEndDate">
+          <input type="radio" name="joinType" id="joinType1" required /><label for="joinType1">진행</label>
+          <input type="radio" name="joinType" id="joinType2" class="ml-10" required /><label for="joinType2">비진행</label>
         </div>
-        <p class="input-title mt-20">캠페인 기간</p>
-        <div class="input-wrap">
-          <input type="text" class="datepicker" name="startDate">
-          <span class="mx-10">~</span>
-          <input type="text" class="datepicker" name="endDate">
-        </div>
-        <p class="input-title mt-20">체크 리스트</p>
-        <input class="input" style="width:100%;box-sizing: border-box;"></input>
-        <p class="input-title mt-20">담당자 연락처</p>
-        <input class="input" style="width:100%;box-sizing: border-box;"></input>
-        <p class="input-title mt-20">담당자 이메일</p>
-        <input class="input" style="width:100%;box-sizing: border-box;"></input>
-        <p class="input-title mt-20">보상</p>
-        <textarea class="input" style="width:100%;box-sizing: border-box;"></textarea>
         <p class="input-title mt-20">보상 포인트</p>
-        <div class="input-wrap">
-          <input class="input"></input>P
+        <input class="input" style="text-align: right" value="0"></input>
+        <h3 class="mt-30">기간 정보</h3>
+        <style>
+          .input-wrap {
+            position: relative;
+          }
+          .dot {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background: #8B95A1;
+            z-index: 9;
+          }
+        </style>
+        <div class="mt-20" style="position: relative">
+          <div class="input-wrap">
+            <div class="dot"></div>
+            <span style="width:100px;padding-left:30px;color:#4c5864;font-size:13px;">모집 기간</span>
+            <input type="text" class="datepicker" name="recruitStartDate">
+            <span class="mx-10 color-info">-</span>
+            <input type="text" class="datepicker" name="reqruitEndDate">
+          </div>
+          <div class="input-wrap mt-10">
+            <div class="dot"></div>
+            <span style="width:100px;padding-left:30px;color:#4c5864;font-size:13px;">선정 기간</span>
+            <input type="text" class="datepicker" name="startDate">
+            <span class="mx-10 color-info">-</span>
+            <input type="text" class="datepicker" name="endDate">
+          </div>
+          <div class="input-wrap mt-10">
+            <div class="dot"></div>
+            <span style="width:100px;padding-left:30px;color:#4c5864;font-size:13px;">발표일</span>
+            <input type="text" class="datepicker" name="startDate">
+            <span class="mx-10 color-info">-</span>
+            <input type="text" class="datepicker" name="endDate">
+          </div>
+          <div class="input-wrap mt-10">
+            <div class="dot"></div>
+            <span style="width:100px;padding-left:30px;color:#4c5864;font-size:13px;">등록 기간</span>
+            <input type="text" class="datepicker" name="startDate">
+            <span class="mx-10 color-info">-</span>
+            <input type="text" class="datepicker" name="endDate">
+          </div>
+          <div class="input-wrap mt-10">
+            <div class="dot"></div>
+            <span style="width:100px;padding-left:30px;color:#4c5864;font-size:13px;">결과 보고 확인</span>
+            <input type="text" class="datepicker" name="startDate">
+          </div>
+          <div style="position: absolute;top:20px;left:3px;width:1px;bottom:20px;background:#e9eaec;"></div>
         </div>
-        <button class="btn btn-primary" style="display:block;margin:20px auto 0">등록 신청</button>
+        <button class="btn btn-primary" style="display:block;margin:20px auto 0;padding:15px 60px">저장 </button>
       </div>
   </main>
   <footer>

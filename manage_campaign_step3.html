@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Band&Cast</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <header class="border">
+        <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+        <ul class="menus">
+            <li>
+                <a href="./campaign.html">캠페인</a>
+            </li>
+            <li>
+                <a href="./insight.html">#인사이트</a>
+            </li>
+            <li>
+                <a href="./cs_notice_list.html">고객센터</a>
+            </li>
+            <li>
+                <a href="./login.html">로그인</a>
+            </li>
+            <li>
+                <a href="./mypage.html">마이페이지</a>
+            </li>
+            <li>
+                <a href="./manage.html">관리페이지</a>
+            </li>
+        </ul>
+    </header>
+    <main class="page aside-page manage-campaign-page">
+        <aside>
+            <h2>관리페이지</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>
+                        <span class="color-primary">(주) 애드오너</span>
+                    </p>
+                    <p class="mt-10">(48305) 서울특별시 동작구 상도로37</p>
+                    <p class="mt-10" style="font-size: 15px">담당자: 김민경 과장</p>
+                </div>
+            </div>
+            <div class="card mt-20">
+                <div class="card-body">
+                    <a href="./manage_profile.html">
+                        업체 정보 관리 <i class="el-icon-arrow-right float-right"></i></a>
+                </div>
+            </div>
+            <div class="card mt-20">
+                <div class="card-head">캠페인 목록</div>
+                <div class="card-body">
+                    <p>
+                        모집 대기
+                        <a class="color-primary float-right bold" href="./manage_campaign.html">23</a>
+                    </p>
+                    <p class="mt-10">
+                        모집 중
+                        <a class="color-primary float-right bold" href="./manage_campaign.html">21</a>
+                    </p>
+                    <p class="mt-10">
+                        진행 대기
+                        <a class="color-secondary float-right" href="./manage_campaign.html">21</a>
+                    </p>
+                    <p class="mt-10">
+                        완료
+                        <a class="color-secondary float-right" href="./manage_campaign.html">23</a>
+                    </p>
+                </div>
+                <div class="card-foot">
+                    <a href="./manage_campaign_add.html">
+                        신규 캠페인 등록
+                        <i class="el-icon-arrow-right float-right"></i>
+                    </a>
+                </div>
+                <div class="card-foot">
+                    <a href="./manage_point.html">
+                        포인트 관리
+                        <i class="el-icon-arrow-right float-right"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <div class="contents-container">
+            <h2>캠페인명</h2>
+            <div class="campaign-info">
+                <div style="width:80px;height:80px;background:black;margin-right: 20px;"></div>
+                <ul style="flex-grow:1;">
+                    <li>인플루언서 모집 <span>2022.04.08 ~ 2022.04.10</span></li>
+                    <li>인플루언서 선정 <span>2022.04.08 ~ 2022.04.10</span></li>
+                    <li>인플루언서 발표 <span>2022.04.08</span></li>
+                </ul>
+                <ul style="flex-grow:1;">
+                    <li>콘텐츠 등록 기간 <span>2022.04.08 ~ 2022.04.10</span></li>
+                    <li>결과보고 확인 <span>2022.04.08</span></li>
+                </ul>
+            </div>
+            <div class="mt-20">
+                <ul class="navs">
+                    <li onclick="location.href='/manage_campaign_step1.html'">캠페인 기획</li>
+                    <li onclick="location.href='/manage_campaign_step2.html'">인플루언서 모집</li>
+                    <li onclick="location.href='/manage_campaign_step3.html'" class="active">캠페인 진행</li>
+                    <li onclick="location.href='/manage_campaign_step4.html'">결과 보고</li>
+                </ul>
+                <ul class="tabs mt-20">
+                    <li>전체(500)</li>
+                    <li class="active">발송 준비(300)</li>
+                    <li>배송 대기(100)</li>
+                    <li>원고 대기(100)</li>
+                    <li>업로드 대기(0)</li>
+                    <li>탈락(10)</li>
+                    <li>완료(0)</li>
+                </ul>
+                <style>
+                    #control-table td {
+                        text-align: center;
+                    }
+
+                    .link {
+                        color: #409eff !important;
+                    }
+
+                    .select.small {
+                        height: 30px;
+                        line-height: 30px;
+                        padding-right: 30px;
+                    }
+                </style>
+                <table id="control-table" class="table form border-table mt-20 border-top">
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>상태</th>
+                            <th>주소</th>
+                            <th>송장/쿠폰번호</th>
+                            <th>원고</th>
+                            <th>포스팅 주소</th>
+                            <th>업데이트</th>
+                            <th>
+                                <button class="btn btn-secondary btn-small">전체 수정</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>가나다</td>
+                            <td class="color-warning">배송 대기</td>
+                            <td>배송지</td>
+                            <td><input type="text" class="input"></td>
+                            <td>
+                                -
+                            </td>
+                            <td>
+                                <!-- <a href="#" class="link">보기</a> -->
+                                -
+                            </td>
+                            <td>2022-01-01 10:00</td>
+                            <td>
+                                <button class="btn btn-secondary btn-small">수정</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>가나다</td>
+                            <td class="color-success">원고 대기</td>
+                            <td>배송지</td>
+                            <td>한진 1234-123</td>
+                            <td>
+                                <button class="btn btn-danger btn-small">검토</button>
+                            </td>
+                            <td>
+                                <!-- <a href="#" class="link">보기</a> -->
+                                -
+                            </td>
+                            <td>2022-01-01 10:00</td>
+                            <td>
+                                <button class="btn btn-secondary btn-small">수정</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>가나다</td>
+                            <td>
+                                <select class="select small">
+                                    <option value="">업로드 대기 </option>
+                                    <option value="">배송 대기</option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>배송지</td>
+                            <td>한진 1234-123</td>
+                            <td>
+                                <a href="#" class="link">보기</a>
+                            </td>
+                            <td>
+                                <a href="#" class="link">보기</a>
+                            </td>
+                            <td>2022-01-01 10:00</td>
+                            <td>
+                                <button class="btn btn-primary btn-small">저장</button>
+                                <button class="btn btn-secondary btn-small">취소</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <script>
+            var popup = {
+                show: function (id) {
+                    const popupEl = document.querySelector('#' + id)
+                    document.querySelector('body').style.overflow = 'hidden';
+                    popupEl.style.display = 'flex';
+                },
+                hide: function (id) {
+                    const popupEl = document.querySelector('#' + id)
+                    document.querySelector('body').style.overflow = 'auto';
+                    popupEl.style.display = 'none';
+                    popup.clear();
+                }
+            }
+        </script>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="logo">Band<span>&</span>Cast</p>
+            <p class="item mt-20">
+                <span>대표자 : 홍길동</span>
+                <span>주소 : 서울특별시 강남구 역삼동</span>
+            </p>
+            <p class="item">
+                <span>이메일 : abc@abc.com</span>
+                <span>사업자등록번호 : 123-123-1234</span>
+                <span>등록일 : 2023. 01. 01 </span>
+            </p>
+            <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

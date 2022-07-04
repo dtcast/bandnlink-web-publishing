@@ -120,6 +120,17 @@
   background-color: #4c5864;
 }
 
+.btn:disabled {
+  color: #fff;
+  background-color: #c0c4cc;
+  border: 1px solid #c0c4cc;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background-color: #c0c4cc;
+}
+
 .pagination {
   margin: 40px auto;
   display: -webkit-box;
@@ -289,9 +300,9 @@
 }
 
 .form .input-title {
-  color: #8b95a1;
+  color: #4c5864;
   font-size: 13px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .form .input {
@@ -461,6 +472,17 @@
   stroke-linecap: round;
 }
 
+.badge {
+  display: inline-block;
+  margin: 4px;
+  background: #4c5864;
+  color: white;
+}
+
+.badge:last-of-type {
+  margin-bottom: 0;
+}
+
 .popup-wrap {
   position: fixed;
   top: 0;
@@ -531,16 +553,5 @@
   outline: none;
   background: url(../img/i_popup_close.svg) center no-repeat;
   cursor: pointer;
-}
-
-.popup-wrap .popup .badge {
-  display: inline-block;
-  margin: 4px;
-  background: #4c5864;
-  color: white;
-}
-
-.popup-wrap .popup .badge:last-of-type {
-  margin-bottom: 0;
 }
 /*# sourceMappingURL=components.css.map */
