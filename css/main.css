@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 body {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
@@ -494,6 +495,16 @@ hr.black {
 .badge.badge-red {
   color: #ff5252;
   background: rgba(255, 82, 82, 0.1);
+}
+
+.badge.badge-dark-blue {
+  background: #3182f6;
+  color: white;
+}
+
+.badge.badge-dark-red {
+  background: #f56c6c;
+  color: white;
 }
 
 .search-input {
@@ -1624,92 +1635,6 @@ footer .container .item span {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
-}
-
-.campaign-page .campaigns {
-  margin-top: 60px;
-}
-
-.campaign-page .campaigns li {
-  float: left;
-  position: relative;
-  margin-right: 30px;
-  width: 237px;
-  height: 390px;
-  border: 1px solid #e9eaec;
-  padding: 25px 30px;
-  overflow: hidden;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.campaign-page .campaigns li:hover {
-  background: #f5f7fa;
-}
-
-.campaign-page .campaigns li .thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  background: #e9eaec;
-  cursor: pointer;
-}
-
-.campaign-page .campaigns li .thumb > img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.campaign-page .campaigns li .thumb:hover > img {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-}
-
-.campaign-page .campaigns li .badge-wrap {
-  margin: 200px 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.campaign-page .campaigns li .title {
-  margin-top: 24px;
-  display: block;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  color: #4c5864;
-}
-
-.campaign-page .campaigns li .desc {
-  margin-top: 14px;
-  display: block;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #4c5864;
-}
-
-.campaign-page .campaigns li .participation {
-  margin-top: 24px;
-  color: #8b95a1;
-  font-size: 14px;
-}
-
-.campaign-page .campaigns li .progress {
-  width: 100%;
 }
 
 .campaign-detail-page {
@@ -2881,5 +2806,145 @@ footer .container .item span {
   float: right;
   color: #c0c4cc;
   font-size: 11px;
+}
+
+.campaigns li {
+  float: left;
+  position: relative;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 237px;
+  height: 390px;
+  border: 1px solid #e9eaec;
+  padding: 25px 30px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.campaigns li:hover {
+  background: #f5f7fa;
+}
+
+.campaigns li .thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #e9eaec;
+  cursor: pointer;
+}
+
+.campaigns li .thumb > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.campaigns li .thumb:hover > img {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.campaigns li .thumb.has-overlay::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.campaigns li .thumb.temp::after {
+  content: "기획중";
+}
+
+.campaigns li .thumb.closed::after {
+  content: "종료됨";
+}
+
+.campaigns li .thumb .status-badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.campaigns li .badge-wrap {
+  margin: 200px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.campaigns li .title {
+  margin-top: 24px;
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #4c5864;
+}
+
+.campaigns li .desc {
+  margin-top: 14px;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4c5864;
+}
+
+.campaigns li .participation {
+  margin-top: 24px;
+  color: #8b95a1;
+  font-size: 14px;
+}
+
+.campaigns li .progress {
+  width: 100%;
+}
+
+.progress {
+  border: none;
+  background: #f5f7fa;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress::-webkit-progress-value {
+  background: #3182f6;
+}
+
+.progress-red::-webkit-progress-value {
+  background: #f56c6c;
+}
+
+.progress::-webkit-progress-bar {
+  background: #f5f7fa;
 }
 /*# sourceMappingURL=main.css.map */

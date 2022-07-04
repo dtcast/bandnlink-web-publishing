@@ -270,6 +270,16 @@
   background: rgba(255, 82, 82, 0.1);
 }
 
+.badge.badge-dark-blue {
+  background: #3182f6;
+  color: white;
+}
+
+.badge.badge-dark-red {
+  background: #f56c6c;
+  color: white;
+}
+
 .search-input {
   padding-left: 50px !important;
   background: url(../img/i_search.svg) center left 20px no-repeat;

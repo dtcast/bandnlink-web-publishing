@@ -1,118 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Band&Cast</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-    />
-    <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-      crossorigin="anonymous"
-    ></script>
-    <!-- import CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-    />
-    <!-- import JavaScript -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  </head>
-  <body>
-    <header class="border">
-      <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
-      <ul class="menus">
-        <li>
-          <a href="./campaign.html">캠페인</a>
-        </li>
-        <li>
-          <a href="./insight.html">#인사이트</a>
-        </li>
-        <li>
-          <a href="./cs_notice_list.html">고객센터</a>
-        </li>
-        <li>
-          <a href="./login.html">로그인</a>
-        </li>
-        <li>
-          <a href="./mypage.html">마이페이지</a>
-        </li>
-        <li>
-          <a href="./manage.html">관리페이지</a>
-        </li>
-      </ul>
-    </header>
-    <main class="page campaign-page">
-      <div class="form">
-        <div class="select-wrap">
-          <select class="select">
-            <option value="">카테고리</option>
-          </select>
-          <select class="select ml-20">
-            <option value="">정렬</option>
-          </select>
+<head>
+  <title>Band&Cast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+  <header class="border">
+    <a class="logo" href="./index.html">Band<span>&</span>Cast</a>
+    <ul class="menus">
+      <li>
+        <a href="./campaign.html">캠페인</a>
+      </li>
+      <li>
+        <a href="./insight.html">#인사이트</a>
+      </li>
+      <li>
+        <a href="./cs_notice_list.html">고객센터</a>
+      </li>
+      <li>
+        <a href="./login.html">로그인</a>
+      </li>
+      <li>
+        <a href="./mypage.html">마이페이지</a>
+      </li>
+      <li>
+        <a href="./manage.html">관리페이지</a>
+      </li>
+    </ul>
+  </header>
+  <main class="page campaign-page">
+    <div class="form">
+      <div class="select-wrap">
+        <select class="select">
+          <option value="">카테고리</option>
+        </select>
+        <select class="select ml-20">
+          <option value="">정렬</option>
+        </select>
+      </div>
+      <div class="space"></div>
+      <input type="text" value="" placeholder="검색" class="input search-input" />
+    </div>
+    <ul class="campaigns mt-20">
+      <li>
+        <div class="thumb">
+          <img src="./img/sample_product.png" />
         </div>
-        <div class="space"></div>
-        <input
-          type="text"
-          value=""
-          placeholder="검색"
-          class="input search-input"
-        />
-      </div>
-      <ul class="campaigns">
-        <li>
-          <div class="thumb">
-            <img src="./img/sample_product.png" />
-          </div>
-          <p class="badge-wrap">
-            <span class="badge badge-gray">식품</span>
-            <span class="badge badge-blue">D-8</span>
-          </p>
-          <a class="title">20년 전통의 수제파스타</a>
-          <a class="desc">이탈리아 파스타 명장 출신의 20년 전통 파스타 맛</a>
-          <p class="participation">2명 / 10명</p>
-          <progress max="100" value="70" class="progress">70%</progress>
-        </li>
-        <li>
-          <a class="thumb" href="./campaign_detail.html">
-            <img src="./img/sample_product.png" />
-          </a>
-          <p class="badge-wrap">
-            <span class="badge badge-gray">식품</span>
-            <span class="badge badge-red">D-2</span>
-          </p>
-          <a class="title" href="./campaign_detail.html"
-            >20년 전통의 수제파스타</a
-          >
-          <a class="desc" href="./campaign_detail.html"
-            >이탈리아 파스타 명장 출신의 20년 전통 파스타 맛</a
-          >
-          <p class="participation">0명 / 10명</p>
-          <progress max="100" value="0" class="progress">70%</progress>
-        </li>
-      </ul>
-    </main>
-    <footer>
-      <div class="container">
-        <p class="logo">Band<span>&</span>Cast</p>
-        <p class="item mt-20">
-          <span>대표자 : 홍길동</span>
-          <span>주소 : 서울특별시 강남구 역삼동</span>
+        <p class="badge-wrap">
+          <span class="badge badge-gray">식품</span>
+          <span class="badge badge-blue">D-8</span>
         </p>
-        <p class="item">
-          <span>이메일 : abc@abc.com</span>
-          <span>사업자등록번호 : 123-123-1234</span>
-          <span>등록일 : 2023. 01. 01 </span>
+        <a class="title">20년 전통의 수제파스타</a>
+        <a class="desc">이탈리아 파스타 명장 출신의 20년 전통 파스타 맛</a>
+        <p class="participation">2명 / 10명</p>
+        <progress max="100" value="70" class="progress">70%</progress>
+      </li>
+      <li>
+        <a class="thumb" href="./campaign_detail.html">
+          <img src="./img/sample_product.png" />
+        </a>
+        <p class="badge-wrap">
+          <span class="badge badge-gray">식품</span>
+          <span class="badge badge-red">D-2</span>
         </p>
-        <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
-      </div>
-    </footer>
-  </body>
+        <a class="title" href="./campaign_detail.html">20년 전통의 수제파스타</a>
+        <a class="desc" href="./campaign_detail.html">이탈리아 파스타 명장 출신의 20년 전통 파스타 맛</a>
+        <p class="participation">0명 / 10명</p>
+        <progress max="100" value="0" class="progress">70%</progress>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <div class="container">
+      <p class="logo">Band<span>&</span>Cast</p>
+      <p class="item mt-20">
+        <span>대표자 : 홍길동</span>
+        <span>주소 : 서울특별시 강남구 역삼동</span>
+      </p>
+      <p class="item">
+        <span>이메일 : abc@abc.com</span>
+        <span>사업자등록번호 : 123-123-1234</span>
+        <span>등록일 : 2023. 01. 01 </span>
+      </p>
+      <p class="item">Copyright(c) 2022 Band&Cast All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+
 </html>

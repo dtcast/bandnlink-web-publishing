@@ -113,11 +113,10 @@
                     <li onclick="location.href='/manage_campaign_step4.html'">결과 보고</li>
                 </ul>
                 <ul class="tabs mt-20">
-                    <li>전체(500)</li>
-                    <li class="active">발송 준비(300)</li>
-                    <li>배송 대기(100)</li>
-                    <li>원고 대기(100)</li>
-                    <li>업로드 대기(0)</li>
+                    <li class="active">전체(5)</li>
+                    <li>배송(100)</li>
+                    <li>원고검수(100)</li>
+                    <li>포스팅(0)</li>
                     <li>탈락(10)</li>
                     <li>완료(0)</li>
                 </ul>
@@ -139,6 +138,9 @@
                 <table id="control-table" class="table form border-table mt-20 border-top">
                     <thead>
                         <tr>
+                            <th style="width:50px">
+                                <input type="checkbox" />
+                            </th>
                             <th>이름</th>
                             <th>상태</th>
                             <th>주소</th>
@@ -146,13 +148,11 @@
                             <th>원고</th>
                             <th>포스팅 주소</th>
                             <th>업데이트</th>
-                            <th>
-                                <button class="btn btn-secondary btn-small">전체 수정</button>
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                            <td><input type="checkbox" /></td>
                             <td>가나다</td>
                             <td class="color-warning">배송 대기</td>
                             <td>배송지</td>
@@ -165,33 +165,29 @@
                                 -
                             </td>
                             <td>2022-01-01 10:00</td>
-                            <td>
-                                <button class="btn btn-secondary btn-small">수정</button>
-                            </td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox" /></td>
                             <td>가나다</td>
                             <td class="color-success">원고 대기</td>
                             <td>배송지</td>
                             <td>한진 1234-123</td>
                             <td>
-                                <button class="btn btn-danger btn-small">검토</button>
+                                <button class="btn btn-danger btn-small"
+                                    onclick="popup.show('script-confirm-popup')">검토</button>
                             </td>
                             <td>
                                 <!-- <a href="#" class="link">보기</a> -->
                                 -
                             </td>
                             <td>2022-01-01 10:00</td>
-                            <td>
-                                <button class="btn btn-secondary btn-small">수정</button>
-                            </td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox" /></td>
                             <td>가나다</td>
                             <td>
-                                <select class="select small">
-                                    <option value="">업로드 대기 </option>
-                                    <option value="">배송 대기</option>
+                                <select class="select small" style="width:110px">
+                                    <option value="">원고 대기</option>
                                     <option value=""></option>
                                 </select>
                             </td>
@@ -201,17 +197,58 @@
                                 <a href="#" class="link">보기</a>
                             </td>
                             <td>
+                                <button class="btn btn-danger btn-small">검토</button>
+                            </td>
+                            <td>2022-01-01 10:00</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>가나다</td>
+                            <td>
+                                <span class="color-primary">완료</span>
+                            </td>
+                            <td>배송지</td>
+                            <td>한진 1234-123</td>
+                            <td>
+                                <a href="#" class="link">보기</a>
+                            </td>
+                            <td>
                                 <a href="#" class="link">보기</a>
                             </td>
                             <td>2022-01-01 10:00</td>
-                            <td>
-                                <button class="btn btn-primary btn-small">저장</button>
-                                <button class="btn btn-secondary btn-small">취소</button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
-
+                <div class="mt-20">
+                    <p class="color-info" style="font-size: 13px;line-height:44px;">
+                        선택된 참여자를
+                        <select class="select small" name="" id="" style="margin-left:5px">
+                            <option value="">배송</option>
+                            <option value="">원고검수</option>
+                            <option value="">포스팅</option>
+                            <option value="">탈락</option>
+                            <option value="">완료</option>
+                        </select>
+                        <span style="margin: 0 5px">상태로</span>
+                        <button class="btn btn-primary btn-small">수정</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-wrap" id="script-confirm-popup" style="display:none">
+            <div class="popup" style="max-width: 400px">
+                <button class="popup-close" onclick="popup.hide('script-confirm-popup')"></button>
+                <div class="popup-title">원고 검토하기</div>
+                <div class="popup-body text-center form">
+                    <a href="" class="color-primary">aaa.hwp</a>
+                    <br />
+                    <input type="text" placeholder="반려시 사유를 입력 해주세요" class="input mt-10"
+                        style="width:100%;box-sizing: border-box;" />
+                    <div class="text-center mt-20">
+                        <button class="btn btn-danger">반려</button>
+                        <button class="btn btn-success">승인</button>
+                    </div>
+                </div>
             </div>
         </div>
         <script>

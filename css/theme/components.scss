@@ -224,6 +224,16 @@
     color: #ff5252;
     background: rgba(255, 82, 82, 0.1);
   }
+
+  &.badge-dark-blue {
+    background: $color-primary;
+    color: white;
+  }
+
+  &.badge-dark-red {
+    background: $color-danger;
+    color: white;
+  }
 }
 
 .search-input {
