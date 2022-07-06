@@ -475,3 +475,25 @@
     }
   }
 }
+
+.tabs {
+  display: flex;
+
+  > li {
+    padding: 0 10px;
+    border-right: $color-border;
+    color: $color-text-secondary;
+    border-right: 1px solid $color-border;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:last-of-type {
+      border-right: none;
+    }
+
+    &.active {
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+}

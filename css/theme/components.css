@@ -564,4 +564,29 @@
   background: url(../img/i_popup_close.svg) center no-repeat;
   cursor: pointer;
 }
+
+.tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tabs > li {
+  padding: 0 10px;
+  border-right: #e9eaec;
+  color: #8b95a1;
+  border-right: 1px solid #e9eaec;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabs > li:last-of-type {
+  border-right: none;
+}
+
+.tabs > li.active {
+  color: #3182f6;
+  font-weight: 500;
+}
 /*# sourceMappingURL=components.css.map */

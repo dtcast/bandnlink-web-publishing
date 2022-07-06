@@ -1,0 +1,142 @@
+@import "../theme/color.scss";
+
+.campaigns {
+  li {
+    float: left;
+    position: relative;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width: 237px;
+    height: 390px;
+    border: 1px solid $color-border;
+    padding: 25px 30px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: $color-flat-white;
+    }
+
+    .thumb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: $color-border;
+      cursor: pointer;
+
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover > img {
+        transform: scale(1.02);
+      }
+
+      &.has-overlay {
+        &::after {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          color: white;
+          font-weight: 400;
+          font-size: 20px;
+          letter-spacing: 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      &.temp::after {
+        content: "기획중";
+      }
+
+      &.closed::after {
+        content: "종료됨";
+      }
+
+      .status-badge {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+    .badge-wrap {
+      margin: 200px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .title {
+      margin-top: 24px;
+      display: block;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: $color-text-regular;
+    }
+
+    .desc {
+      margin-top: 14px;
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-text-regular;
+    }
+
+    .participation {
+      margin-top: 24px;
+      color: $color-text-secondary;
+      font-size: 14px;
+    }
+
+    .progress {
+      width: 100%;
+      // border: none;
+    }
+  }
+}
+
+.progress {
+  border: none;
+  background: $color-flat-white;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress::-webkit-progress-value {
+  background: $color-primary;
+}
+
+.progress-red::-webkit-progress-value {
+  background: $color-danger;
+}
+
+.progress::-webkit-progress-bar {
+  background: $color-flat-white;
+}
+
+@media screen and (max-width: 800px) {
+  .campaigns {
+    margin: 10px 0 !important;
+    overflow: hidden;
+
+    > li {
+      width: auto !important;
+      margin: 30px 25px 0;
+    }
+  }
+}

@@ -1,4 +1,7 @@
+@import "theme/color.scss";
+
 @media screen and (max-width: 800px) {
+  
   header {
     .logo {
       display: block;
@@ -122,16 +125,6 @@
             margin-left: 15px !important;
           }
         }
-      }
-    }
-
-    .campaigns {
-      margin: 10px 0 !important;
-      overflow: hidden;
-
-      > li {
-        width: auto !important;
-        margin: 30px 25px 0;
       }
     }
   }

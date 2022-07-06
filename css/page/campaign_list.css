@@ -1,0 +1,184 @@
+@charset "UTF-8";
+.color-primary {
+  color: #3182f6 !important;
+}
+
+.color-success {
+  color: #67c23a !important;
+}
+
+.color-warning {
+  color: #e6a23c !important;
+}
+
+.color-danger {
+  color: #f56c6c !important;
+}
+
+.color-info {
+  color: #8b95a1 !important;
+}
+
+.bg-flat-white {
+  background-color: #f5f7fa;
+}
+
+.border-top {
+  border-top: 1px solid #e9eaec;
+}
+
+.border-top-black {
+  border-top: 1px solid #1f2e3d;
+}
+
+.campaigns li {
+  float: left;
+  position: relative;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 237px;
+  height: 390px;
+  border: 1px solid #e9eaec;
+  padding: 25px 30px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.campaigns li:hover {
+  background: #f5f7fa;
+}
+
+.campaigns li .thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #e9eaec;
+  cursor: pointer;
+}
+
+.campaigns li .thumb > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.campaigns li .thumb:hover > img {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.campaigns li .thumb.has-overlay::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.campaigns li .thumb.temp::after {
+  content: "기획중";
+}
+
+.campaigns li .thumb.closed::after {
+  content: "종료됨";
+}
+
+.campaigns li .thumb .status-badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.campaigns li .badge-wrap {
+  margin: 200px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.campaigns li .title {
+  margin-top: 24px;
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #4c5864;
+}
+
+.campaigns li .desc {
+  margin-top: 14px;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4c5864;
+}
+
+.campaigns li .participation {
+  margin-top: 24px;
+  color: #8b95a1;
+  font-size: 14px;
+}
+
+.campaigns li .progress {
+  width: 100%;
+}
+
+.progress {
+  border: none;
+  background: #f5f7fa;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress::-webkit-progress-value {
+  background: #3182f6;
+}
+
+.progress-red::-webkit-progress-value {
+  background: #f56c6c;
+}
+
+.progress::-webkit-progress-bar {
+  background: #f5f7fa;
+}
+
+@media screen and (max-width: 800px) {
+  .campaigns {
+    margin: 10px 0 !important;
+    overflow: hidden;
+  }
+  .campaigns > li {
+    width: auto !important;
+    margin: 30px 25px 0;
+  }
+}
+/*# sourceMappingURL=campaign_list.css.map */
